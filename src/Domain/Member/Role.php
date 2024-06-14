@@ -1,6 +1,6 @@
 <?php
 
-namespace Member;
+namespace Domain\Member;
 
 enum Role
 {

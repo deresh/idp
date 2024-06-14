@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Member list{% endblock %}
+
 {% block body %}
     <ul>
         {% for member in members %}
-            <li>{{ member.id }} <a href="{{ url('details', {memberId: member.id}) }}"> {{ member.email }}  </a> {{ member.first_name }} {{ member.last_name }}</li>
+            <li>{{ member.id }} <a href="{{ url('details', {memberId: member.id}) }}"> {{ member.email }}  </a> {{ member.firstName }} {{ member.lastName }}</li>
         {% endfor %}
     </ul>
 {% endblock %}

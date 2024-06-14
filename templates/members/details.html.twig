@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Member details - {{ member.email }}{% endblock %}
+
 {% block body %}
 {{ member.email }}
-    {{ member.first_name }}
-    {{ member.last_name }}
+    {{ member.firstName }}
+    {{ member.lastName }}
 {% endblock %}
