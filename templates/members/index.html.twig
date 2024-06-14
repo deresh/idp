@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+        {% for member in members %}
+            <li>{{ member.id }} <a href="{{ url('details', {memberId: member.id}) }}"> {{ member.email }}  </a> {{ member.first_name }} {{ member.last_name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
