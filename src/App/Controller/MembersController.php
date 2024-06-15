@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use Domain\Member\MembersRepository;
+use Domain\Member\Model\MembersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;

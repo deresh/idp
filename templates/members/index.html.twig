@@ -8,4 +8,8 @@
             <li>{{ member.id }} <a href="{{ url('details', {memberId: member.id}) }}"> {{ member.email }}  </a> {{ member.firstName }} {{ member.lastName }}</li>
         {% endfor %}
     </ul>
+
+    <div {{ stimulus_controller('hello') }}>
+        ...
+    </div>
 {% endblock %}

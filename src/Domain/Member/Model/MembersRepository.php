@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Member;
+namespace Domain\Member\Model;
 
 use RuntimeException;
 

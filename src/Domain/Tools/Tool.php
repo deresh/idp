@@ -2,7 +2,7 @@
 
 namespace Domain\Tools;
 
-use Domain\Member\Seniority;
+use Domain\Member\Model\Seniority;
 
 class Tool
 {
