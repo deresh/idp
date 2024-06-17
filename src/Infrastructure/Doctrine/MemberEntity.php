@@ -3,6 +3,8 @@
 namespace Infrastructure\Doctrine;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Embedded;
+use Domain\Member\Model\Seniority;
 
 #[ORM\Entity(repositoryClass: MemberEntityRepository::class)]
 class MemberEntity
@@ -20,6 +22,20 @@ class MemberEntity
 
     #[ORM\Column(length: 255)]
     private ?string $email = null;
+
+    #[ORM\Column(type: 'string', enumType: Seniority::class)]
+    private Seniority $seniority;
+
+    public function getSeniority(): Seniority
+    {
+        return $this->seniority;
+    }
+
+    public function setSeniority(Seniority $seniority): void
+    {
+        $this->seniority = $seniority;
+    }
+
 
     public function getId(): ?int
     {

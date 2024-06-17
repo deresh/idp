@@ -5,7 +5,8 @@
 {% block body %}
     <ul>
         {% for member in members %}
-            <li>{{ member.id }} <a href="{{ url('details', {memberId: member.id}) }}"> {{ member.email }}  </a> {{ member.firstName }} {{ member.lastName }}</li>
+            <li>{{ member.id }} <a href="{{ url('member_details', {memberId: member.id}) }}"> {{ member.email }}  </a> {{ member.firstName }} {{ member.lastName }}
+                <a href="{{ url('member_edit', {memberId: member.id}) }}">Uredi</a>  </li>
         {% endfor %}
     </ul>
 

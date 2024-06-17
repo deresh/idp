@@ -2,8 +2,11 @@
 
 namespace Domain\Member\Model;
 
-readonly class Member
+use Infrastructure\Doctrine\MemberEntity;
+
+class Member
 {
+
     public int $id;
     public string $email;
     public string $firstName;
@@ -30,4 +33,18 @@ readonly class Member
         $this->roles = [$role];
     }
 
+    public static function fromEntity(MemberEntity $entity): self
+    {
+        return new self($entity->getId(), $entity->getEmail(),$entity->getFirstName(), $entity->getLastName(), Seniority::Any, Role::Backend, '');
+    }
+
+    public function getRole(): Role
+    {
+        return current($this->roles);
+    }
+
+    public function setRole(Role $role): void
+    {
+        $this->roles[] = $role;
+    }
 }

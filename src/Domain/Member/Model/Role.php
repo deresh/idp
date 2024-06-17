@@ -2,14 +2,13 @@
 
 namespace Domain\Member\Model;
 
-enum Role
+enum Role: string
 {
-    case Backend;
-    case Frontend;
-    case QualityAssurance;
-    case ScrumMaster;
-    case ProductOwner;
-    case Director;
-    case Lead;
-
+    case Backend = 'back';
+    case Frontend = 'front';
+    case QualityAssurance = 'qa';
+    case ScrumMaster = 'sm';
+    case ProductOwner = 'po';
+    case Director = 'dir';
+    case Lead = 'lead';
 }

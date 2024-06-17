@@ -22,5 +22,16 @@ services:
 
     Domain\:
         resource: '../src/Domain'
+
+    Infrastructure\:
+        resource: '../src/Infrastructure'
+        exclude:
+            - '../src/Infrastructure/Doctrine/'
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    Infrastructure\Doctrine\MemberEntityRepository:
+
+    Domain\Member\Model\MembersRepository:
+        alias: Infrastructure\Doctrine\MemberEntityRepository

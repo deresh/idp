@@ -2,12 +2,13 @@
 
 namespace Domain\Member\Model;
 
-enum Seniority
+enum Seniority: string
 {
-    case Any;
-    case Intern;
-    case Junior;
-    case Medior;
-    case Senior;
-    case Principal;
+    case Any = 'any';
+    case Intern = 'intern';
+    case Junior = 'junior';
+    case Medior = 'mid';
+    case Senior = 'senior';
+    case Principal = 'principal';
+
 }

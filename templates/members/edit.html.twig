@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Member details - {{ member.email }}{% endblock %}
+
+{% block body %}
+    <h1>{{ member.email }} - {{ member.firstName }} {{ member.lastName }}</h1>
+
+    <p>
+    {{ form(form) }}
+    </p>
+{% endblock %}
