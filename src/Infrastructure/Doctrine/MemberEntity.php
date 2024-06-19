@@ -2,8 +2,9 @@
 
 namespace Infrastructure\Doctrine;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\Embedded;
+use Doctrine\ORM\Mapping\OneToMany;
 use Domain\Member\Model\Seniority;
 
 #[ORM\Entity(repositoryClass: MemberEntityRepository::class)]
@@ -25,6 +26,26 @@ class MemberEntity
 
     #[ORM\Column(type: 'string', enumType: Seniority::class)]
     private Seniority $seniority;
+
+    #[ORM\Column(type: 'string')]
+    private ?string $image = null;
+
+    /** One Student has One Mentor. */
+    #[ORM\OneToOne(targetEntity: MemberEntity::class)]
+    #[ORM\JoinColumn(name: 'mentor_id', referencedColumnName: 'id')]
+    private MemberEntity $mentor;
+
+    #[ORM\OneToOne(targetEntity: TeamEntity::class)]
+    #[ORM\JoinColumn(name: 'team_id', referencedColumnName: 'id')]
+    private ?TeamEntity $team;
+
+    #[OneToMany(targetEntity: MemberToolEntity::class, mappedBy: 'member')]
+    private Collection $tools;
+
+    #[OneToMany(targetEntity: MemberGoalEntity::class, mappedBy: 'member')]
+    private Collection $goals;
+
+
 
     public function getSeniority(): Seniority
     {
@@ -76,5 +97,15 @@ class MemberEntity
         $this->email = $email;
 
         return $this;
+    }
+
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): void
+    {
+        $this->image = $image;
     }
 }

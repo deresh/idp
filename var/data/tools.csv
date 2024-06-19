@@ -1,0 +1,320 @@
+14,3,Spryker storefront storages,"debug and detect/fix issues wh data inconsistencies betwen MariaDB and Redis/Elastic
+Publish&Sync issues
+  properly denormalize data to storefront
+  debug inconsistencies",back,any
+15,3,Data imports/exports,"basic imports csv knowledge (wring new importer)
+basic middleware knowledge
+debugging imports
+import config files",back,any
+16,3,Spryker automated tests,"addions to Codeception
+usage whin Spryker
+data builders",back,any
+17,3,CI / CD,"understand what CI/CD is
+how is CI implemented
+  able to adjust builds / steps / setup
+how the code is deployed
+  know how to deploy / restart deploy
+  adjust deploy (deploy files, scripts, enabling / disabling stuff)",back,any
+18,2,PHP OOP,"object model
+  overloading
+late static binding
+inherance, composion
+covariance and contravariance
+cloning, references
+serialization",back,any
+19,3,"Debugging (Xdebug, AJAX, frontend)","understanding of how xdebug works
+basic setup (in a way to know to debugg )
+usage whin project
+usage wh php storgm
+debugging cli
+debugging web requests",back,any
+20,3,Spryker development patterns,"Know all main patterns used
+  creational patterns
+  DI, facade",back,any
+21,2,Message Queue,"basic RabbMQ knowledge (queues, exchanges)
+Spryker implementation
+demonstrated usage whin project
+eventual consistency",back,any
+22,2,Spryker Multistore,"understand how to develop and design new code to support multistore
+understand multistore setup
+  able to setup new instance/store",back,any
+23,2,Frontend for backend,"basic Spryker JS Module understanding
+basic TypeScript understanding
+knowledge of FE build process (running in watch mode, build)
+know your way around frontend",back,any
+24,2,Spryker OMS,"what  is?
+  for what it is used?
+  benefs
+how is implemented
+adding/eding states
+adding transions
+adding events and commands
+debugging OMS issues",back,any
+25,2,Spryker publish & Sync,"setup
+wring publishers
+wring subscribers
+customizing process
+retry/error handling",back,any
+26,1,Clean code / readabily / maintanabily,"basic knowledge of SOLID
+  explain each of patterns in own words
+  demonstrate usage in project (at least on or two)
+basic knowledge of DRY/KISS
+  what are benefs
+  demonstrate application in project",back,any
+27,1,TDD,"what  is
+what are benefs
+how to do 
+  demonstrate at least one case of TDD in project",back,any
+28,2,Refactoring,"why we refactor?
+When to refactor?
+How to refactor?
+Refactoring tools and patterns",back,any
+29,2,AWS / Newrelic,"know your way on AWS and NewRelic
+  logging and log analyisis / searching (debugging statistics, etc.)
+  monoring state
+  adjusting env variables
+know how to ask support from Spryker (Spryker Support) DEVOPS",back,any
+4,3,Basic OOP in PHP,"PHP Object model
+understanding of 4 OOP principles
+demonstrated  knowledge through code ",back,any
+5,3,Layered archecture,"how to extend builtin module
+adding new functionalies to existing code wh plugins
+overriding functionalies
+demonstrate extension by overriding and plugins in code",back,any
+6,3,Extending existing Spryker code,"usage of PHP specific stuff (code inspections, linters)
+generating code
+refactoring tools",back,any
+7,3,Yves module,"What is  used for?
+basic building blocks of Yves module
+demonstrated working code on project that uses Yves module",back,any
+8,3,Zed module,"What is  used for?
+basic building blocks of Zed module
+demonstrated working code on project that uses Zed module:
+  cli interface
+  gateway
+  GUI (backoffice)",back,any
+9,3,Yves module,"What is  used for?
+basic building blocks of Yves module
+demonstrated working code on project that uses Yves module",back,any
+10,3,Client module,"What is  used for?
+basic elements of client module
+demonstrated working code that uses client module",back,any
+11,2,Frontend basic,"atomic design basics
+twig and spryker extensions",back,any
+12,2,Database migrations,"what are migrations?
+when are they used
+benefs / challenges
+Propel migrations",back,any
+13,1,ZED Gui,"wring BO GUI interfaces
+customizing existing ones
+structure of ZedGUI module",back,any
+64,3,Optimizations,Knows how to optimize his code,front,any
+36,3,Basic Git,"init new repo
+commits and branching
+working with remotes
+merging
+resolving conflicts",back,any
+37,3,"Basic Atlasian tools (Bitbucket, Jira, Confluence)","working with code in Bitbucket (pull requests, ci, merging, branching)
+finding / creating issues in Jira 
+working on cards (comments,statuses, editing)
+basic editing skills on Confluence (creating / updating documents)",back,any
+38,2,Docker,"basic containerisation knowledge (image/container)
+docker cli
+running containers
+connecting to running containers
+checking docker status and errors",back,any
+39,3,"Communication tools (Email, MS Teams)","using email and contacts
+creating meetings
+chats/group chats
+sharing files
+scheduling calls
+out of office reminders",back,any
+40,3,Spryker configuration,"setting up new environments
+config files and inheritance
+understanding ci setup",back,any
+41,3,Spryker SDK,"changing environments
+changing branches
+switching between instances
+reseting project",back,any
+42,2,Spryker Architecture,"type of architecture
+modules
+high level parts of SEOS
+eventual consistency
+storage separation
+infrastructure",back,any
+43,3,Postman,"using collections
+environments
+making calls
+authorization
+examples",back,any
+44,3,HTTP(S),"what it is? benefits?
+reqests
+  methods
+  headers
+response
+  codes, main groups
+authorization
+cache
+proxy
+https certificates (encryption)
+cookies",back,any
+1,3,PHP & ecosystem basics,"php basics (syntax, loops, control structures)
+running simple scripts
+managing dependencies (composer)
+autoloader
+demonstrated built small project in PHP wh help of composer and some 3rd party library from packagist)",back,any
+2,3,Spryker modules basics,"Basic of modular archecture in spryker
+   structure
+   layering rules
+   required parts
+   naming conventions
+demonstrate wrtenany kind of Spyker module",back,any
+3,2,"PHP Storm (refactor, automation)","usage of PHP specific stuff (code inspections, linters)
+generating code
+refactoring tools",back,any
+45,3,Atomic design,"understanding basic concepts (Atomic Design )
+describing basic building blocks of atomic design
+what are some cons of this approach
+Atomic components in Twig",front,any
+46,3,"Basics of HTML, SCSS","understanding HTML sintax
+understanding semantic HTML
+responsive design
+SCSS variables
+understanding of helper and settings SCSS files",front,any
+47,3,Basic DOM manipulation,"understanding of basic Event listeners
+know how manipulate DOM elements",front,any
+48,3,Understanding the concept of templating languages,"understanding of reusing components
+experience with one of templating languages (Twig, EJS)",front,any
+49,3,Spryker frontend,"differences zed vs yves implementation
+webComponents standard and Spryker impl. differences
+https://docs.spryker.com/docs/scos/dev/front-end-development/front-end-development.html basic knowledge
+  how components work
+  creating new components
+  extending existing one
+basic knowledge of build system (adding new components to build, extending existing)",front,any
+50,3,BEM,"advantages of this approach
+understanding of BEM syntax
+demonstrate basic advantages in code
+why BEM and what are some advantages",front,any
+51,3,Basic Javascript,"basic language use
+  variables
+  scope
+  functions
+  prototyping
+  loops
+  conditionals
+basic ES6/ES7 differences",front,any
+52,2,Basic Typescript,"advantages over plain ES
+demonstrated use in code",front,any
+53,2,Twig in Spryker,"basic Twig usage (Twig for Template Designers - Documentation - Twig - The flexible, fast, and secure PHP template engine )
+variables
+blocks
+include
+embed
+extending templates
+conditionals
+macros
+spryker atomic design extensiond (atom, molecule, organism, etc.)",front,any
+54,3,Spryker CMS,"understanding of basic CMS components (page, slot, block, content item)
+know how to create new CMS components (page, slot, block, content item)",front,any
+55,3,Symfony Forms,"understanding how form is rendered
+know how to modify form rendering
+know differences between form.twig in ShopUi/Theme/resource directory and form.twig as a molecule",front,any
+30,3,Refactoring and OOP advanced,"able to prepare large refactoring efforts
+  drill down to smaller tasks
+abily to apply better design patterns
+improve arhecture to support new functionalies
+prepare parts of platform for extensions
+improve readabily and nameing
+great understanding of SOLID and when to apply  for greater benefs",back,any
+31,3,OOP Software design,"wring clean and maintainable code using best practices
+  advanced knowledge of SOLID, clean code, 7 code virtues
+understand and use CQRS/events/messaging
+abily to cleary explain asdvantage of good software design and s impact",back,any
+33,3,AWS / Newrelic advanced,"tweaking deployments
+optimize logging and advanced search
+deep analysis and debugging (for example production)
+revert deploys
+setup alerting on NewRelic and AWS
+changing deploy branches / adjusting deploy pipelines)",back,any
+34,2,ElasticSearch,"creating new indexes
+optimize scoring
+aggregations
+pagination
+rebuild indexes",back,any
+35,2,TDD Advanced,"refactoring tests
+know your way around Codeception
+  tweaking configuration
+  wring test helpers
+  wring advanced data builders
+basic BDD knowledge / gherking style tests",back,any
+56,3,Multistore,"Understanding how multistore theme works
+Know how to implement new theme
+Theme separation",front,any
+57,2,Semantic HTML,"Schema.org - Schema.org 
+improving HTML for better readability by search engines",front,any
+58,3,Webpack,"Understanding how build works
+Understanding how and where images are bundled  ",front,any
+59,3,Advanced TS & SCSS,"Asynchronous JavaScript (fetch, async/await)
+Polyfills
+extending SCSS (@include, @import …)
+OOP TS (modules, classes …)",front,any
+60,2,Advanced DOM manipulations,"JS custom events
+event propagation (bubbling & capturing)",front,any
+61,3,Spryker CMS,"Understanding how import of CMS content works
+Know how to create new templates for CMS components (new template for CMS block)
+Manipulating CMS content",front,any
+62,3,Spryker frontend build,"adding new libraries / packages
+customizing build
+optimizations
+overriding / extending core stuff",front,any
+63,2,ZED Frontend,"build
+overriding & extending
+modifying ZED GUI ",front,any
+76,3,Testing web app,"document bugs in Jira
+with no help understand bug
+with no help be able to setup test enviroment (set LC, addreses..)",qa,any
+77,3,Git,"create new branch
+commit & push changes
+solving easy merge conflicts ",qa,any
+78,3,PractiTest,"add custom fields
+create integration with Jira
+administrate fields, tests, filters, test sets",qa,any
+79,3,Jira,"create a task or a story
+create a new branch for ticket/story
+create custom filters
+create bugs with no help",qa,any
+80,3,BitBucket,create new projects,qa,any
+81,2,AWS,"approve a depoly for production
+check is deploy successful
+restart jobs",qa,any
+82,2,Cypress,"creating tests in existing project
+  running tests
+  debugging tests localy & CI",qa,any
+65,3,Customizing build,Know how to create good setup,front,any
+66,3,Testing web app,"understanding testing cycle (when and what is tested at each point)
+be able to test functionality by the acceptance criteria in Jira story
+document bug in Jira with help",qa,any
+67,3,Writing manual tests,"know how to create a test scenario based on acceptance criteria form Jira stories
+write user journey as a test",qa,any
+68,3,Git,"checkout on to a new branch
+rebase branch before the merge",qa,any
+69,3,PractiTest,"add new tests
+create test sets
+use test sets (e.g regresion)
+create and use custom filters",qa,any
+70,3,Jira,"how to create bugs with help
+know the life cycle of a ticket ",qa,any
+71,2,BitBucket,"merge branches
+track commits",qa,any
+72,2,Travis,know the flow of running jobs,qa,any
+73,2,Postman,know how to use preset collections,qa,any
+74,2,DBeaver,"conect DB on local machine
+add/change/remove data",qa,any
+75,2,HTML/CSS basic,"understand HTML layout and basic elements
+understand difference between HTML and CSS
+need to be able to create simple HTML pages",qa,any
+83,3,Cypress,"setup project 
+create the architetur of the project ",qa,any
+84,2,Travis,"understand how the jobs are working
+be able to make changes on the jos in the project",qa,any
