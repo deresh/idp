@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use Infrastructure\Doctrine\ToolEntity;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -15,14 +16,14 @@ class ToolEntityCrudController extends AbstractCrudController
         return ToolEntity::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id'),
-            TextField::new('title'),
+            ChoiceField::new('priority'),
+            ChoiceField::new('seniority'),
+            TextField::new('name'),
             TextEditorField::new('description'),
         ];
     }
-    */
 }

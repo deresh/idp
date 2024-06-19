@@ -45,6 +45,8 @@ class MemberEntity
     #[OneToMany(targetEntity: MemberGoalEntity::class, mappedBy: 'member')]
     private Collection $goals;
 
+    #[ORM\ManyToMany(targetEntity: RoleDescriptionEntity::class, inversedBy: 'users')]
+    private Collection $roles;
 
 
     public function getSeniority(): Seniority

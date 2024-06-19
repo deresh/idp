@@ -6,6 +6,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Infrastructure\Doctrine\MemberEntity;
+use Infrastructure\Doctrine\ToolEntity;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -44,5 +45,6 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Members', 'fas fa-list', MemberEntity::class);
+        yield MenuItem::linkToCrud('Tools', 'fas fa-list', ToolEntity::class);
     }
 }

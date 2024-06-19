@@ -16,7 +16,7 @@ class ToolEntity
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: 'string', enumType: Priority::class)]
+    #[ORM\Column(type: 'integer', enumType: Priority::class)]
     private Priority $priority = Priority::Low;
 
     #[ORM\Column(length: 50)]
