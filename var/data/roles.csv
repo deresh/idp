@@ -1,0 +1,22 @@
+back,"Creation of backlog (project specifics) - creation and management of the Product Backlog is a critical function of the Product Owner, as it ensures that the development team is working on the most valuable and impactful. items for the product. Product Owner collaborates with stakeholders and customers to understand their needs, and then translates those needs into actionable items that can be added to the Product Backlog → OK
+Prioritization of backlog - Prioritizing the backlog helps the development team to focus on the most critical and valuable items first, ensuring that they are delivered in a timely manner. This process involves evaluating each item based on its business value, level of effort, dependencies, and other factors that impact the project's success. → OK
+         Scope decisions on fly → OK
+         Reporting and development tracking → ajmo detaljnije napisati (report na kraju sprinta, report o statusu projekta, report za steerco, team velocity & capacity, itd )
+         Creating clear product vision → OK (Defining short and long strategy of product development, Product vision and improvement suggestions)
+         Sprint planning (to maximize output tbd/tbc detaljnije vidjeti tko i kako treba sudjelovati ovdje) → OK
+         Defining sprint goal (po + team predlaze cilj, na kraju svi moraju biti usuglaseni oko cilja) → OK
+         Release planning / mgmt / comms→ OK
+         Active participation in fulfilling sprint goal → pushanje, objasnjavanje, pojasnjavanje, support, whatever sto je potrebno da se achieva sprint goal → OK
+         Enforcing / Supporting sprint review (interno tim)→ OK
+         Leading demo ceremony (za stakeholdere)→ OK
+         Collaboration with stakeholders → OK (alignment with business & product manager, external partners/resources i.e. Spryker, Alkemy, etc.)
+         Working actively with team → OK
+         Leading Refinement (Presenting stakeholder’s requirements) → OK
+         Leading and supporting discovery faze → OK
+         Customer behavioral analytics → OK (GTM, ili neki drugi tool)"
+qa, "All things quality"
+front, "Frontent devs"
+sm, "Scrum master"
+po, "Product owner"
+dir, "Director"
+lead, "Lead"

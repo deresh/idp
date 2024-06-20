@@ -19,7 +19,7 @@ class RoleEntityCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ChoiceField::new('id', 'Role'),
+            ChoiceField::new('role', 'Role'),
             TextEditorField::new('description'),
         ];
     }

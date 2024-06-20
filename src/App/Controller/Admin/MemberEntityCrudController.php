@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
@@ -27,12 +28,15 @@ class MemberEntityCrudController extends AbstractCrudController
             EmailField::new('email', 'Email'),
             ImageField::new('image', 'Image')
                 ->setBasePath('uploads/images/members/')
-                ->setUploadDir('public/uploads/images/members/'),
+                ->setUploadDir('public/uploads/images/members/')
+                ->setRequired(false),
             FormField::addTab('Relations'),
             ChoiceField::new('seniority', 'Seniority'),
-            CollectionField::new('roles', 'Role'),
-            ChoiceField::new('mentor', 'Mentor')
+            AssociationField::new('roles', 'Role'),
+            AssociationField::new('mentor', 'Mentor')
 
         ];
     }
+
+
 }

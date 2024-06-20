@@ -22,6 +22,7 @@
 # Parameters
 /app/config/parameters.yml
 /app/config/parameters.ini
+.env.local
 
 # Managed by Composer
 /app/bootstrap.php.cache
@@ -34,6 +35,7 @@
 # Assets and user uploads
 /web/bundles/
 /web/uploads/
+/public/uploads/
 
 # PHPUnit
 /app/phpunit.xml

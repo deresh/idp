@@ -23,8 +23,6 @@ class ToolsFixtures extends Fixture
 
             $tool = new ToolEntity();
 
-            dump($line);
-
             $tool->setName($line[2]);
             $tool->setDescription($line[3]);
             $tool->setPriority(Priority::from((int)$line[1]));

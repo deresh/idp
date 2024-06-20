@@ -40,7 +40,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Idp')
+            ->setTitle('Team managment / Individual development plans')
             ->renderContentMaximized()
         ;
     }
@@ -48,10 +48,13 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::section('Members');
         yield MenuItem::linkToCrud('Members', 'fas fa-users', MemberEntity::class);
+        yield MenuItem::section('Supporting');
         yield MenuItem::linkToCrud('Team', 'fas fa-people-group', TeamEntity::class);
         yield MenuItem::linkToCrud('Tools', 'fas fa-building', ToolEntity::class);
         yield MenuItem::linkToCrud('Roles', 'fas fa-flag', RoleEntity::class);
+        yield MenuItem::section('Idp');
         yield MenuItem::linkToCrud('Members tools', 'fas fa-users', MemberToolEntity::class);
 
     }

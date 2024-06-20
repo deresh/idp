@@ -2,11 +2,13 @@
 
 namespace App\Controller\Admin;
 
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use Infrastructure\Doctrine\MemberToolEntity;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class MemberToolEntityCrudController extends AbstractCrudController
 {
@@ -15,14 +17,15 @@ class MemberToolEntityCrudController extends AbstractCrudController
         return MemberToolEntity::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            AssociationField::new('member'),
+            ChoiceField::new('Tool'),
+            DateTimeField::new('start'),
+            DateTimeField::new('end'),
+            TextEditorField::new('comments'),
         ];
     }
-    */
 }

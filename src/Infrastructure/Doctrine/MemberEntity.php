@@ -46,7 +46,7 @@ class MemberEntity
     #[OneToMany(targetEntity: MemberGoalEntity::class, mappedBy: 'member')]
     private Collection $goals;
 
-    #[ORM\ManyToMany(targetEntity: RoleEntity::class, inversedBy: 'users')]
+    #[ORM\ManyToMany(targetEntity: RoleEntity::class)]
     private Collection $roles;
 
 
@@ -157,8 +157,12 @@ class MemberEntity
         return $this->roles;
     }
 
-    public function setRoles(array $roles): void
+    public function setRoles(Collection $roles): void
     {
-        $this->roles = new ArrayCollection($roles);
+        $this->roles = $roles;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->first_name . ' ' . $this->last_name;
     }
 }
