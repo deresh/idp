@@ -2,6 +2,7 @@
 
 namespace Infrastructure\Doctrine;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
@@ -45,7 +46,7 @@ class MemberEntity
     #[OneToMany(targetEntity: MemberGoalEntity::class, mappedBy: 'member')]
     private Collection $goals;
 
-    #[ORM\ManyToMany(targetEntity: RoleDescriptionEntity::class, inversedBy: 'users')]
+    #[ORM\ManyToMany(targetEntity: RoleEntity::class, inversedBy: 'users')]
     private Collection $roles;
 
 
@@ -109,5 +110,55 @@ class MemberEntity
     public function setImage(string $image): void
     {
         $this->image = $image;
+    }
+
+    public function getMentor(): MemberEntity
+    {
+        return $this->mentor;
+    }
+
+    public function setMentor(MemberEntity $mentor): void
+    {
+        $this->mentor = $mentor;
+    }
+
+    public function getTeam(): ?TeamEntity
+    {
+        return $this->team;
+    }
+
+    public function setTeam(?TeamEntity $team): void
+    {
+        $this->team = $team;
+    }
+
+    public function getTools(): Collection
+    {
+        return $this->tools;
+    }
+
+    public function setTools(Collection $tools): void
+    {
+        $this->tools = $tools;
+    }
+
+    public function getGoals(): Collection
+    {
+        return $this->goals;
+    }
+
+    public function setGoals(Collection $goals): void
+    {
+        $this->goals = $goals;
+    }
+
+    public function getRoles(): Collection
+    {
+        return $this->roles;
+    }
+
+    public function setRoles(array $roles): void
+    {
+        $this->roles = new ArrayCollection($roles);
     }
 }

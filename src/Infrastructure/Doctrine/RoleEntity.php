@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Domain\Member\Model\Role;
 
 #[ORM\Entity()]
-class RoleDescriptionEntity
+class RoleEntity
 {
     #[ORM\Id]
     #[ORM\Column]
@@ -34,6 +34,4 @@ class RoleDescriptionEntity
     {
         $this->description = $description;
     }
-
-
 }
