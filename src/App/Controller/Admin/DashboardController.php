@@ -6,6 +6,7 @@ use Domain\Member\Model\Role;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use Infrastructure\Doctrine\MemberAssesmentEntity;
 use Infrastructure\Doctrine\MemberEntity;
 use Infrastructure\Doctrine\MemberToolEntity;
 use Infrastructure\Doctrine\RoleEntity;
@@ -48,14 +49,15 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::section('Members');
-        yield MenuItem::linkToCrud('Members', 'fas fa-users', MemberEntity::class);
-        yield MenuItem::section('Supporting');
-        yield MenuItem::linkToCrud('Team', 'fas fa-people-group', TeamEntity::class);
-        yield MenuItem::linkToCrud('Tools', 'fas fa-building', ToolEntity::class);
-        yield MenuItem::linkToCrud('Roles', 'fas fa-flag', RoleEntity::class);
-        yield MenuItem::section('Idp');
-        yield MenuItem::linkToCrud('Members tools', 'fas fa-users', MemberToolEntity::class);
+        yield MenuItem::section('Članovi');
+        yield MenuItem::linkToCrud('Lista članova', 'fas fa-users', MemberEntity::class);
+        yield MenuItem::section('Podaci');
+        yield MenuItem::linkToCrud('Timovi', 'fas fa-people-group', TeamEntity::class);
+        yield MenuItem::linkToCrud('Alati', 'fas fa-building', ToolEntity::class);
+        yield MenuItem::linkToCrud('Role', 'fas fa-flag', RoleEntity::class);
+        yield MenuItem::section('Razvojni plan');
+        yield MenuItem::linkToCrud('Procjene po članovima', 'fas fa-plane', MemberAssesmentEntity::class);
+        yield MenuItem::linkToCrud('Alati po članovima', 'fas fa-users', MemberToolEntity::class);
 
     }
 }

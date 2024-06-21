@@ -89,4 +89,11 @@ class ToolEntity
     {
         $this->priority = $priority;
     }
+
+    public function __toString(): string
+    {
+        return $this->getSeniority()->name. ' '. $this->name  ?? '';
+    }
+
+
 }

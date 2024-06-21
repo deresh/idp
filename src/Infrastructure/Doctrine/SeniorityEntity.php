@@ -49,5 +49,10 @@ class SeniorityEntity
         $this->description = $description;
     }
 
+    public function __toString(): string
+    {
+        return $this->seniority->name;
+    }
+
 
 }

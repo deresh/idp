@@ -12,4 +12,6 @@ enum Role: string
     case Director = 'dir';
     case Lead = 'lead';
 
+    case Any = 'any';
+
 }

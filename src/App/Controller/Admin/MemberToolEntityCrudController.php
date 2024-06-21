@@ -2,12 +2,13 @@
 
 namespace App\Controller\Admin;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use Infrastructure\Doctrine\MemberToolEntity;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 class MemberToolEntityCrudController extends AbstractCrudController
@@ -20,12 +21,32 @@ class MemberToolEntityCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
             AssociationField::new('member'),
-            ChoiceField::new('Tool'),
-            DateTimeField::new('start'),
-            DateTimeField::new('end'),
+            AssociationField::new('tool'),
+            ChoiceField::new('priority'),
+            ChoiceField::new('status'),
+            DateTimeField::new('startDate'),
+            DateTimeField::new('endDate'),
             TextEditorField::new('comments'),
         ];
     }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Alat člana')
+            ->setEntityLabelInPlural('Alati po članovima')
+            ;
+    }
+    public function configureFilters(Filters $filters): Filters
+    {
+        return $filters
+            ->add('member')
+            ->add('tool')
+            ->add('priority')
+            ->add('status')
+        ;
+    }
+
+
 }

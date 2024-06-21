@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use Infrastructure\Doctrine\TeamEntity;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -14,6 +15,15 @@ class TeamEntityCrudController extends AbstractCrudController
     {
         return TeamEntity::class;
     }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Tim')
+            ->setEntityLabelInPlural('Timovi')
+        ;
+    }
+
 
     /*
     public function configureFields(string $pageName): iterable

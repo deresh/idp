@@ -23,20 +23,20 @@ class MemberToolEntity
     #[OneToOne(targetEntity: ToolEntity::class)]
     private ToolEntity $tool;
 
-    #[ORM\Column(type: 'string', enumType: Priority::class)]
+    #[ORM\Column(type: 'integer', enumType: Priority::class)]
     private Priority $priority;
 
     #[ORM\Column(type: 'string', enumType: Status::class)]
     private Status $status;
 
     #[ORM\Column(type: 'datetime_immutable')]
-    private DateTimeImmutable $start;
+    private DateTimeImmutable $startDate;
 
     #[ORM\Column(type: 'datetime_immutable')]
-    private DateTimeImmutable $end;
+    private DateTimeImmutable $endDate;
 
     #[ORM\Column(type: 'string', length: 1024, nullable: true)]
-    private string $comments = "";
+    private ?string $comments = "";
 
     public function getId(): ?int
     {
@@ -88,32 +88,34 @@ class MemberToolEntity
         $this->status = $status;
     }
 
-    public function getStart(): DateTimeImmutable
+    public function getStartDate(): DateTimeImmutable
     {
-        return $this->start;
+        return $this->startDate;
     }
 
-    public function setStart(DateTimeImmutable $start): void
+    public function setStartDate(DateTimeImmutable $startDate): void
     {
-        $this->start = $start;
+        $this->startDate = $startDate;
     }
 
-    public function getEnd(): DateTimeImmutable
+    public function getEndDate(): DateTimeImmutable
     {
-        return $this->end;
+        return $this->endDate;
     }
 
-    public function setEnd(DateTimeImmutable $end): void
+    public function setEndDate(DateTimeImmutable $endDate): void
     {
-        $this->end = $end;
+        $this->endDate = $endDate;
     }
 
-    public function getComments(): string
+
+
+    public function getComments(): ?string
     {
         return $this->comments;
     }
 
-    public function setComments(string $comments): void
+    public function setComments(?string $comments): void
     {
         $this->comments = $comments;
     }
