@@ -20,6 +20,7 @@ class MemberAssesmentEntityCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Procjena člana')
             ->setEntityLabelInPlural('Procjene po članovima')
+            ->showEntityActionsInlined()
             ;
     }
     public function configureFields(string $pageName): iterable

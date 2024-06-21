@@ -36,6 +36,7 @@ class MemberToolEntityCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Alat člana')
             ->setEntityLabelInPlural('Alati po članovima')
+            ->showEntityActionsInlined()
             ;
     }
     public function configureFilters(Filters $filters): Filters

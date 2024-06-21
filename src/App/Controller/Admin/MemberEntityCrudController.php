@@ -25,6 +25,7 @@ class MemberEntityCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Član')
             ->setEntityLabelInPlural('Članovi')
+            ->showEntityActionsInlined()
         ;
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use Domain\Member\Model\Role;
 use Domain\Member\Model\Seniority;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
@@ -29,6 +30,7 @@ class ToolEntityCrudController extends AbstractCrudController
             ->setEntityLabelInSingular('Alat')
             ->setEntityLabelInPlural('Alati')
             ->setSearchFields(['name', 'description', 'role', 'seniority'])
+            ->showEntityActionsInlined()
         ;
     }
 
@@ -46,9 +48,19 @@ class ToolEntityCrudController extends AbstractCrudController
 
     public function configureFilters(Filters $filters): Filters
     {
+        $roles = [];
+        foreach (Role::cases() as $case) {
+            $roles[$case->name] = $case->value;
+        }
+
+        $seniorities = [];
+        foreach (Seniority::cases() as $case) {
+            $seniorities[$case->name] = $case->value;
+        }
+
         return $filters
-            ->add(EntityFilter::new('seniority')->setFormTypeOption('value_type_options', ['class' => SeniorityEntity::class]))
-            ->add(EntityFilter::new('role')->setFormTypeOption('value_type_options', ['class' => RoleEntity::class]))
+            ->add(ChoiceFilter::new('seniority')->setChoices($seniorities))
+            ->add(ChoiceFilter::new('role')->setChoices($roles))
             ->add('priority')
             ;
     }

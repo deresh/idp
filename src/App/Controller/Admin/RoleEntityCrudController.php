@@ -22,6 +22,7 @@ class RoleEntityCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Rola')
             ->setEntityLabelInPlural('Role')
+            ->showEntityActionsInlined()
             ;
     }
 

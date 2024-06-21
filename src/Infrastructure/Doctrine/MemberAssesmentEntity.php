@@ -35,18 +35,15 @@ class MemberAssesmentEntity
     private ProgressStatus $progressStatus = ProgressStatus::OnBoarding;
 
     #[ORM\Column(type: 'json', nullable: true)]
-    private Collection $strengths;
+    private array $strengths;
     #[ORM\Column(type: 'json', nullable: true)]
-    private Collection $weaknesses;
+    private array $weaknesses;
 
-    /**
-     * @param Collection $weaknesses
-     * @param Collection $strengths
-     */
+
     public function __construct()
     {
-        $this->weaknesses = new ArrayCollection();
-        $this->strengths = new ArrayCollection();
+        $this->weaknesses = [];
+        $this->strengths = [];
     }
 
     public function getId(): ?int
@@ -89,22 +86,22 @@ class MemberAssesmentEntity
         $this->progressStatus = $progressStatus;
     }
 
-    public function getStrengths(): Collection
+    public function getStrengths(): array
     {
         return $this->strengths;
     }
 
-    public function setStrengths(Collection $strengths): void
+    public function setStrengths(array $strengths): void
     {
         $this->strengths = $strengths;
     }
 
-    public function getWeaknesses(): Collection
+    public function getWeaknesses(): array
     {
         return $this->weaknesses;
     }
 
-    public function setWeaknesses(Collection $weaknesses): void
+    public function setWeaknesses(array $weaknesses): void
     {
         $this->weaknesses = $weaknesses;
     }

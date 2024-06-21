@@ -8,8 +8,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Infrastructure\Doctrine\MemberAssesmentEntity;
 use Infrastructure\Doctrine\MemberEntity;
+use Infrastructure\Doctrine\MemberPerformanceReviewEntity;
 use Infrastructure\Doctrine\MemberToolEntity;
 use Infrastructure\Doctrine\RoleEntity;
+use Infrastructure\Doctrine\SeniorityEntity;
 use Infrastructure\Doctrine\TeamEntity;
 use Infrastructure\Doctrine\ToolEntity;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardController extends AbstractDashboardController
 {
-    #[Route('/admin', name: 'admin')]
+    #[Route('/admin/{_locale}', name: 'admin', locale: 'en_US')]
     public function index(): Response
     {
 
@@ -42,7 +44,7 @@ class DashboardController extends AbstractDashboardController
     {
         return Dashboard::new()
             ->setTitle('Team managment / Individual development plans')
-            ->renderContentMaximized()
+            ->setLocales(['hr_HR', 'sl_SI', 'en_US'])
         ;
     }
 
@@ -55,9 +57,11 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Timovi', 'fas fa-people-group', TeamEntity::class);
         yield MenuItem::linkToCrud('Alati', 'fas fa-building', ToolEntity::class);
         yield MenuItem::linkToCrud('Role', 'fas fa-flag', RoleEntity::class);
+        yield MenuItem::linkToCrud('Nivoi Senioriteta', 'fas fa-id-card', SeniorityEntity::class);
         yield MenuItem::section('Razvojni plan');
-        yield MenuItem::linkToCrud('Procjene po članovima', 'fas fa-plane', MemberAssesmentEntity::class);
-        yield MenuItem::linkToCrud('Alati po članovima', 'fas fa-users', MemberToolEntity::class);
+        yield MenuItem::linkToCrud('Procijene', 'fas fa-plane', MemberAssesmentEntity::class);
+        yield MenuItem::linkToCrud('Alati', 'fas fa-users', MemberToolEntity::class);
+        yield MenuItem::linkToCrud('Osvrt /SRM', 'fas fa-binoculars', MemberPerformanceReviewEntity::class);
 
     }
 }

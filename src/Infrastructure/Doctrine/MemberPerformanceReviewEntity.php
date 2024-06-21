@@ -5,6 +5,7 @@ namespace Infrastructure\Doctrine;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
+use Domain\Tools\ProgressStatus;
 
 #[ORM\Entity(repositoryClass: MemberEntityRepository::class)]
 class MemberPerformanceReviewEntity
@@ -25,6 +26,9 @@ class MemberPerformanceReviewEntity
 
     #[ORM\Column(type: 'datetime_immutable')]
     private DateTimeImmutable $srmDate;
+
+    #[ORM\Column(type: 'string', nullable: true, enumType: ProgressStatus::class)]
+    private ProgressStatus $progressStatus = ProgressStatus::OnBoarding;
 
     #[ORM\Column(type: 'string', length: 2500)]
     private ?string $feedback = null;
@@ -100,5 +104,15 @@ class MemberPerformanceReviewEntity
     public function setResponse(?string $response): void
     {
         $this->response = $response;
+    }
+
+    public function getProgressStatus(): ProgressStatus
+    {
+        return $this->progressStatus;
+    }
+
+    public function setProgressStatus(ProgressStatus $progressStatus): void
+    {
+        $this->progressStatus = $progressStatus;
     }
 }
