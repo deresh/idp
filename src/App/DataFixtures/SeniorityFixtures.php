@@ -26,7 +26,6 @@ class SeniorityFixtures extends Fixture
 
             $roleEntity->setSeniority(Seniority::from($line['0']));
             $roleEntity->setDescription($line[1]);
-
             $manager->persist($roleEntity);
 
             $this->addReference('seniority-'.$i, $roleEntity);

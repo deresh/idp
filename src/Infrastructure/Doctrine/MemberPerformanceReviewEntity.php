@@ -15,9 +15,6 @@ class MemberPerformanceReviewEntity
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $name = null;
-
     #[ManyToOne(targetEntity: MemberEntity::class, inversedBy: 'goals')]
     private MemberEntity $member;
 

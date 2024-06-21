@@ -1,4 +1,25 @@
-back,"Creation of backlog (project specifics) - creation and management of the Product Backlog is a critical function of the Product Owner, as it ensures that the development team is working on the most valuable and impactful. items for the product. Product Owner collaborates with stakeholders and customers to understand their needs, and then translates those needs into actionable items that can be added to the Product Backlog → OK
+back,"Working on platform using PHP and relatet tech
+Maintaining application and writing automated tests
+Managing services (db, queue, search, cache, etc.)
+Improving code
+Detecting and reporting obstacles in development
+Doing devops stuff (CI/CD, monitoring, deployments)"
+qa,"Managing releases
+Testing locally and on staging
+Tracking bugs and quality of the projects 
+Writing use cases and tests
+Automating UI/acceptance tests
+Performance testing"
+front,"Working on project using JS / TS
+Slicing templates
+Building interactive UI elements
+Improving frontend"
+sm,"Servant leader of team
+Tracking team members and sprint
+Handling scrum ceremonies
+Removing obstacles
+Improving team cohesion"
+po,"Creation of backlog (project specifics) - creation and management of the Product Backlog is a critical function of the Product Owner, as it ensures that the development team is working on the most valuable and impactful. items for the product. Product Owner collaborates with stakeholders and customers to understand their needs, and then translates those needs into actionable items that can be added to the Product Backlog → OK
 Prioritization of backlog - Prioritizing the backlog helps the development team to focus on the most critical and valuable items first, ensuring that they are delivered in a timely manner. This process involves evaluating each item based on its business value, level of effort, dependencies, and other factors that impact the project's success. → OK
          Scope decisions on fly → OK
          Reporting and development tracking → ajmo detaljnije napisati (report na kraju sprinta, report o statusu projekta, report za steerco, team velocity & capacity, itd )
@@ -14,9 +35,10 @@ Prioritization of backlog - Prioritizing the backlog helps the development team 
          Leading Refinement (Presenting stakeholder’s requirements) → OK
          Leading and supporting discovery faze → OK
          Customer behavioral analytics → OK (GTM, ili neki drugi tool)"
-qa, "All things quality"
-front, "Frontent devs"
-sm, "Scrum master"
-po, "Product owner"
-dir, "Director"
-lead, "Lead"
+dir,"Managing teams
+Handling of budget
+Leading projects
+Driving platform architecture"
+lead,"Leading development
+Monitoring dev status and obstacles
+Improving dev UX"

@@ -1,11 +1,166 @@
 any,""
 intern,""
-junior 1,""
-junior 2,""
-junior 3,""
-mid 1,""
-mid 2,""
-mid 3,""
-senior 1,""
-senior 2,""
-principal,""
+junior 1,"ima volju, entuzijazam i zelju za učenjem i napretkom
+
+postavlja puno pitanja, treba  tražiti pomoć
+
+uči na svojim greškama (npr. kod se cesto vraća sa QC-a i QA)
+
+zna osnove alata koje koristi (editor, jezik, web aplikacija, itd.)
+
+poznaje standarde i procedure oko rada na zadacima
+
+može sudjelovati na projektu (setup projekta, checkout , pokretanje projekta)
+
+rješava zadatke uz pomoć kolega iz tima"
+junior 2,"poznaje osnovne elemente platforme (zna za što se koriste pojedine tehnologije na projektu)
+
+ima naviku posegnuti za dokumentacijom (google, confluence, etc.) prije nego što postavi pitanje
+
+prati stanje svojih kartica do dizanja na produkciju (npr. kartice ne cekaju u QC danima)
+
+odgovoran je za ispravno i pravovremeno rjesavanje zadataka uz pomoć kolega
+
+"
+junior 3,"može sam riješiti zadatke uz detaljne upute
+
+zna kada tražiti pomoć i od koga
+
+polako razumije naprednije koncepte alata koji koristi
+
+moze samostalno prezentirati izmjene koje je napravio (priprema/support za QA)"
+mid 1,"samostalno može riješiti dobivene zadatke (manji bugovi, pisanje komandi, izmjene postojećeg dizajna, izmjene u funkcionalnosti…)
+
+uz minimalnu podršku kolega aktivno sudjeluje u refinementu/definiranju zadataka (potvrduje što je razumio, pita sto nije razumio)
+
+dolazi sa svojim prijedlozima rješenja kada treba pomoć
+
+radi provjere zadataka juniora (npr. QC kod developera)
+
+podrška je juniorima te im prenosi svoje znanje
+
+upoznat je s principima i dobrim praksama struke te su mu jasni njihovi benefiti (patterni kod developmenta, design guidelines kod designa, dobre prakse QAa itd.)
+
+razumije osnovne gradive dijelove aplikacije/sustava na kojoj radi
+
+ima sposobnost pročitati i razumjeti postojeća rješenja
+
+demonstrira osnove komunikacijskih vještina (pravovremeno komunicira probleme, trazi pomoć, itd.)"
+mid 2,"sposoban procijeniti kompleksnost dobivenih zadatka za svoj nivo
+
+riješava dobivene zadatke uz pravovremeno traženje pomoći kolega
+
+predlaže rješenja, raspisuje kartice na refinementu (raspisuje samostalno kartice, sudjeluje u pisanju acceptance kriterija)
+
+počinje uočavati gdje može pridonijeti projektu te povremeno proaktivno predlaže rješenja i zadatke
+
+konstruktivno sudjeluje u sastancima (retrospektiva, brainstorming, prati temu, ne ustručava se reći nešto)
+
+podrška je nivoima ispod sebe te im prenosi svoje znanje
+
+većim dijelom samostalan
+
+razumije i vlada principima i dobrim praksama struke (patterni, styleguideovi, standardi, itd.)
+
+može provjeravati  zadatke svih kompleksnosti svim članovima tima
+
+zna izargumentirati svoj stav na u raspravama (refinement, sastanci, kod stakeholdera/klijenta)
+
+sudjeluje i komunicira sa drugim odjelima (npr. komunikacija s PO/PD, biznis) bez potrebne podrške (kolege iz tima, mentor… )
+
+sudjeluje u dizajnu featurea/projekata/procesa (UI, softver, mobilna aplikacija, backend
+aplikacija, itd)
+
+sudjeluje i u procesima van tima (tipa deploy, komunikacija oko deploya, release,
+produkcija itd.)"
+mid 3,"proaktivno uzima zadatke adekvatne svojem nivou koje samostalno rješava
+
+predlaze primjenjiva unapređenja standarda, procesa i projekta
+
+pravovremeno prepoznaje kad treba pružiti podršku te aktivno prenosi svoje znanje na kolege
+
+gleda širu sliku
+
+moze mentorirati juniore
+
+dizajnira feature/projekt/proces uz pomoć seniora
+
+može sam voditi i definirati manje projekte
+
+zna prepoznati “tehnički dug”  i uz pomoć seniora validira ideje za uklanjanje/smanjenje istog.
+
+"
+senior 1,"proaktivno rješava zadatke svih nivoa i kompleksnosti
+
+dizajnira i vodi feature/projekt prema business requirementima
+
+razumije koncepte koji stoje iza tehnologija i rješenja u projektu
+
+ukoliko naiđe na dio standarda, procesa ili projekta za kojeg smatra da postoji prostor
+za unapređenje onda prijedlog unapređenja pravovremeno komunicira.
+
+aktivno komunicira i aktivno sudjeluje s biznisom i kolegama van tima
+
+aktivno sudjeluje u raspisivanju kartica & planiranju sprinteva/projekata te jasno piše acceptance kriterije
+
+prati stanje taskova kroz sprint
+
+mentorira juniore i midove
+
+proaktivno dijeli znanje i educira ostale kolege."
+senior 2,"brine se za poboljsanje i provođenje standarda i procedura
+
+provjerava razumijevanje, skrece paznju na potencijalne prepreke, sakuplja
+potrebne informacije, challengira prijedloge i odluke
+
+definira arhitekturu projekta/većih cjelina koda ili design sistema:
+
+zna kada “presjeći” i odlučiti u kom smjeru ide dogovor oko arhitekture/designa sistema ili projekta.
+
+daje više prijedloga za implementaciju dogovorenog rješenja.
+
+prepoznaje benefite i nedostatke rješenja koja razmatra
+
+uviđa gdje postoje “problemi“ oko znanja i aktivno radi na rješavanju istih
+
+samostalno provodi edukacije (mentoring, radionice, showoff, itd.)
+
+zna odrediti prioritete
+
+postavlja “prava“ pitanja (pitanja usmjerena na kvalitetnije rješavanje problema ili poteškoa u predloženom rješenju, jasna i pravilno usmjerena pitanja) za biznis kako bi se buduća rješenja mogla što bolje producirati
+
+aktivno sudjeluje sa PO/biznis u definiciji taskova
+
+aktivno predlaže poboljšanja i sudjeluje u definiranju standarda
+
+sudjeluje u planiranju projekata s biznisom (high level procjenama za npr. budzetiranje, itd.)
+
+izvrsno poznaje business stranu platforme (procese i odluke zašto nešto na platformi radi na određeni način) te tech stranu platforme
+
+ne mora poznavati sve procese ili dijelove u detalje, ali mora poznavati sve na visokom nivou
+
+ "
+principal,"pomaže o organizaciji posla i prioretizaciji (u svim aktivnostima tima, postaje liderska uloga)
+
+sudjeluje u planiranju, razvoju i budućnosti platforme zajedno s business stranom
+
+vodi dizajn featurea/projekta
+
+validira, predlaže i poboljšava standarde
+
+u tijeku je sa novitetima u tehnologiji i struci te analizira i komunicira njihovu primjenjivost na
+projektu
+
+mentorira seniore i druge mentore
+
+aktivno sudjeluje u izradi i provedbi edukacije i unapređenju iste
+
+aktivan u community-u (npr. kroz open source, stackoverflow, konfe, talkovi, predavanja, …)
+
+proaktivno analizira poslovne potrebe i aktivno predlaže promjene za razvoj pouzdanih i točnih proizvoda
+
+pište i razvija dokumentacije i tehnike specifikacije za projekte/proizvode
+
+primarni je kontakt za sve vrste upita oko razvoja
+
+analizira, te precizno rješava probleme kod razvoja"
