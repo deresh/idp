@@ -6,7 +6,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Domain\Member\Model\Role;
 use Infrastructure\Doctrine\RoleEntity;
-use Infrastructure\Doctrine\TeamEntity;
 
 class RoleFixtures extends Fixture
 {
@@ -27,8 +26,9 @@ class RoleFixtures extends Fixture
 
             $manager->persist($roleEntity);
 
-            $this->addReference('role-'.$i, $roleEntity);
+            $ref = 'role-'.$roleEntity->getRole()->value;
 
+            $this->addReference($ref, $roleEntity);
 
             $i = $i + 1;
 
@@ -43,6 +43,6 @@ class RoleFixtures extends Fixture
     }
     public function getOrder()
     {
-        return 2;
+        return 20;
     }
 }

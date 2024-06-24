@@ -2,6 +2,7 @@
 
 namespace Infrastructure\Doctrine;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -25,15 +26,22 @@ class MemberEntity
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
+    #[ORM\Column(type: 'date')]
+    private ?DateTime $hireDate = null;
+
+
+
     #[ORM\Column(type: 'string', enumType: Seniority::class)]
     private Seniority $seniority;
 
     #[ORM\Column(type: 'string', nullable: true)]
     private ?string $image = null;
 
+    #[OneToMany(targetEntity: MemberEntity::class, mappedBy: 'mentor')]
+    private Collection $mentees;
+
     /** One Student has One Mentor. */
-    #[ORM\OneToOne(targetEntity: MemberEntity::class)]
-    #[ORM\JoinColumn(name: 'mentor_id', referencedColumnName: 'id')]
+    #[ORM\ManyToOne(targetEntity: MemberEntity::class, inversedBy: 'mentees')]
     private MemberEntity $mentor;
 
     #[ORM\OneToOne(targetEntity: TeamEntity::class)]
@@ -49,6 +57,15 @@ class MemberEntity
     #[ORM\ManyToMany(targetEntity: RoleEntity::class)]
     private Collection $roles;
 
+    public function getHireDate(): ?DateTime
+    {
+        return $this->hireDate;
+    }
+
+    public function setHireDate(?DateTime $hireDate): void
+    {
+        $this->hireDate = $hireDate;
+    }
 
     public function getSeniority(): Seniority
     {
@@ -164,5 +181,15 @@ class MemberEntity
     public function __toString(): string
     {
         return (string) $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function getMentees(): Collection
+    {
+        return $this->mentees;
+    }
+
+    public function setMentees(Collection $mentees): void
+    {
+        $this->mentees = $mentees;
     }
 }
