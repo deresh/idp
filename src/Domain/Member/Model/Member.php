@@ -22,9 +22,11 @@ class Member
 
     public string $team;
 
+    public \DateTime $hiredAt;
+
     public string $imgUrl;
 
-    public function __construct(int $id, string $email, string $firstName, string $lastName, Seniority $seniority, array $roles, string $team, string $imgUrl)
+    public function __construct(int $id, string $email, string $firstName, string $lastName, Seniority $seniority, array $roles, string $team, string $imgUrl, \DateTime $hiredAt)
     {
         $this->id = $id;
         $this->email = $email;
@@ -34,6 +36,7 @@ class Member
         $this->team = $team;
         $this->roles = $roles;
         $this->imgUrl = $imgUrl;
+        $this->hiredAt = $hiredAt;
     }
 
     public static function fromEntity(MemberEntity $entity): self
@@ -42,6 +45,6 @@ class Member
         foreach ($entity->getRoles()->toArray() as $roleEntity) {
             $roles[] = $roleEntity->getRole();
         };
-        return new self($entity->getId(), $entity->getEmail(),$entity->getFirstName(), $entity->getLastName(), $entity->getSeniority(), $roles, $entity->getTeam()->getName(), (string) $entity->getImage());
+        return new self($entity->getId(), $entity->getEmail(),$entity->getFirstName(), $entity->getLastName(), $entity->getSeniority(), $roles, $entity->getTeam()->getName(), (string) $entity->getImage(), $entity->getHireDate());
     }
 }

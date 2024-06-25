@@ -7,18 +7,18 @@
 <div class="row row-cols-1 row-cols-lg-4 g-2">
     {% for member in members %}
 <div class="col">
-    <div class="card h-100 align-content-center">
-        <img src="/uploads/images/members/{{ member.imgUrl }}" class="card-img-top object-fit-lg-cover" alt="{{ member.firstName }} {{ member.lastName }}">
+    <div class="card h-100">
+        <img src="/uploads/images/members/{{ member.imgUrl }}" class="card-img" alt="{{ member.firstName }} {{ member.lastName }}">
         <div class="card-body">
             <h5 class="card-title">{{ member.firstName }} {{ member.lastName }} : {{ member.seniority.name }}</h5>
         <p class="card-text">
-
+            {% for role in member.roles %}
+            <span class="">{{ role.name }}
         </p>
             <a href="#" class="btn btn-primary">Details</a>
         </div>
         <div class="card-footer">
-            <small class="text-body-secondary">            {% for role in member.roles %}
-                    <span class="pure-button  button-warning">{{ role.name }}</span>
+            <small class="text-body-secondary">Joined : {{ member.hiredAt|date('d.m.Y') }}</span>
                 {% endfor %}</small>
         </div>
     </div>
