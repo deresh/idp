@@ -24,7 +24,7 @@ class TeamFixtures extends Fixture
 
             $manager->persist($teamEntity);
 
-            $this->addReference('team-'.$i, $teamEntity);
+            $this->addReference('team-'.$line[0], $teamEntity);
 
 
             $i = $i + 1;
@@ -37,9 +37,5 @@ class TeamFixtures extends Fixture
         fclose($csv);
 
         $manager->flush();
-    }
-    public function getOrder()
-    {
-        return 2;
     }
 }

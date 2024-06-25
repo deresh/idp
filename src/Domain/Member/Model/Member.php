@@ -22,7 +22,9 @@ class Member
 
     public string $team;
 
-    public function __construct(int $id, string $email, string $firstName, string $lastName, Seniority $seniority, Role $role, string $team)
+    public string $imgUrl;
+
+    public function __construct(int $id, string $email, string $firstName, string $lastName, Seniority $seniority, array $roles, string $team, string $imgUrl)
     {
         $this->id = $id;
         $this->email = $email;
@@ -30,21 +32,16 @@ class Member
         $this->lastName = $lastName;
         $this->seniority = $seniority;
         $this->team = $team;
-        $this->roles = [$role];
+        $this->roles = $roles;
+        $this->imgUrl = $imgUrl;
     }
 
     public static function fromEntity(MemberEntity $entity): self
     {
-        return new self($entity->getId(), $entity->getEmail(),$entity->getFirstName(), $entity->getLastName(), Seniority::Any, Role::Backend, '');
-    }
-
-    public function getRole(): Role
-    {
-        return current($this->roles);
-    }
-
-    public function setRole(Role $role): void
-    {
-        $this->roles[] = $role;
+        $roles = [];
+        foreach ($entity->getRoles()->toArray() as $roleEntity) {
+            $roles[] = $roleEntity->getRole();
+        };
+        return new self($entity->getId(), $entity->getEmail(),$entity->getFirstName(), $entity->getLastName(), $entity->getSeniority(), $roles, $entity->getTeam()->getName(), (string) $entity->getImage());
     }
 }

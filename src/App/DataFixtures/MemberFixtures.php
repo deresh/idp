@@ -31,10 +31,16 @@ class MemberFixtures extends Fixture implements DependentFixtureInterface
             $memberEntity->setRoles(new ArrayCollection([$this->getReference('role-'.$line[3])]));
             $memberEntity->setSeniority(Seniority::from($line[4]));
             $memberEntity->setHireDate(new \DateTime($line[9]));
+            $memberEntity->setTeam($this->getReference('team-'.$line[5]));
+            $memberEntity->setImage($line[12]);
 
+            $filepath = dirname(__FILE__).'/../../../var/data/member_images/'.$line[12];
+
+            if (file_exists($filepath)) {
+                copy ($filepath, dirname(__FILE__).'/../../../public/uploads/images/members/'.$line[12]);
+            }
 
             $mentorEmail[$i] = $line[6];
-            //$memberEntity->setMentor($this->getReference('mentor-'.$line[5]));
 
             $manager->persist($memberEntity);
 
@@ -63,6 +69,6 @@ class MemberFixtures extends Fixture implements DependentFixtureInterface
 
     public function getDependencies()
     {
-        return [RoleFixtures::class];
+        return [RoleFixtures::class, TeamFixtures::class];
     }
 }

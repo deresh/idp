@@ -44,7 +44,7 @@ class MemberEntity
     #[ORM\ManyToOne(targetEntity: MemberEntity::class, inversedBy: 'mentees')]
     private MemberEntity $mentor;
 
-    #[ORM\OneToOne(targetEntity: TeamEntity::class)]
+    #[ORM\ManyToOne(targetEntity: TeamEntity::class)]
     #[ORM\JoinColumn(name: 'team_id', referencedColumnName: 'id')]
     private ?TeamEntity $team;
 
@@ -119,12 +119,12 @@ class MemberEntity
         return $this;
     }
 
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(string $image): void
+    public function setImage(?string $image): void
     {
         $this->image = $image;
     }

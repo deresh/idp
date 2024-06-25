@@ -12,90 +12,50 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
+    <body class="">
+    <div class="container-lg">
 
-    <div id="layout" class="content pure-g">
-        <div id="nav" class="pure-u">
-            <a href="#" id="menuLink" class="nav-menu-button">Menu</a>
-
-            <div class="nav-inner">
-                <button class="primary-button pure-button">IDP tool</button>
-
-                <div class="pure-menu">
-                    <ul class="pure-menu-list">
-                        <li class="pure-menu-heading">Members:</li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">OKRs</a></li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Calendar</a></li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Retrospective</a></li>
-                        <li class="pure-menu-heading">Labels</li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-personal"></span>Seniorities</a></li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-work"></span>Roles</a></li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-travel"></span>Teams</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="row">
+        <div class="col-lg-2">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                <span class="fs-4">Sidebar</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="{{ url('members') }}" class="nav-link active" aria-current="page">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                        Member list
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                        Seniorities
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                        Roles
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                        Tools
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div id="list" class="pure-u-1">
-            {% block sidelist %}{% endblock %}
-        </div>
-        <div id="main" class="pure-u-1">
+        <div class="col-lg-10">
             {% block body %}
 
             {% endblock %}
         </div>
+        </div>
     </div>
-    <!-- Script to make the Menu link work -->
-    <!-- Just stripped down version of the js/ui.js script for the side-menu layout -->
-    <script>
-        function getElements() {
-            return {
-                menu: document.getElementById('nav'),
-                menuLink: document.getElementById('menuLink')
-            };
-        }
-
-        function toggleClass(element, className) {
-            var classes = element.className.split(/\s+/);
-            var length = classes.length;
-            var i = 0;
-
-            for (; i < length; i++) {
-                if (classes[i] === className) {
-                    classes.splice(i, 1);
-                    break;
-                }
-            }
-            // The className is not found
-            if (length === classes.length) {
-                classes.push(className);
-            }
-
-            element.className = classes.join(' ');
-        }
-
-        function toggleMenu() {
-            var active = 'active';
-            var elements = getElements();
-
-            toggleClass(elements.menu, active);
-        }
-
-        function handleEvent(e) {
-            var elements = getElements();
-
-            if (e.target.id === elements.menuLink.id) {
-                toggleMenu();
-                e.preventDefault();
-            } else if (elements.menu.className.indexOf('active') !== -1) {
-                toggleMenu();
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            document.addEventListener('click', handleEvent);
-        });
-    </script>
-
 
 
     </body>

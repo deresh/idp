@@ -1,0 +1,17 @@
+{% for member in members %}
+    <div class="email-item email-item-selected pure-g">
+        <div class="pure-u">
+            <img width="64" height="64" alt="{{ member.firstName }} {{ member.lastName }} avatar" class="email-avatar" src="/uploads/images/members/{{ member.imgUrl }}">
+        </div>
+
+        <div class="pure-u-3-4">
+            <h5 class="email-name">{{ member.firstName }} {{ member.lastName }}</h5>
+            <h4 class="email-subject">{{ member.seniority.name }}</h4>
+            <p class="email-desc">
+                {% for role in member.roles %}
+                <div class="pure-button  button-warning">{{ role.name }}</div>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+{% endfor %}

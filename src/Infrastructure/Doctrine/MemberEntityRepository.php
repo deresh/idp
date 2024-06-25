@@ -19,7 +19,7 @@ class MemberEntityRepository extends ServiceEntityRepository implements MembersR
 
     public function all(): array
     {
-        $all = $this->createQueryBuilder('m')->getQuery()->getResult();
+        $all = $this->createQueryBuilder('m')->orderBy('m.hireDate')->getQuery()->getResult();
         $members = [];
 
         foreach ($all as $member) {

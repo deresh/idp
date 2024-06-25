@@ -6,7 +6,7 @@ import './bootstrap.js';
  * which should already be in your base.html.twig.
  */
 
-import './styles/pure-min.css';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 import './styles/app.css';
 

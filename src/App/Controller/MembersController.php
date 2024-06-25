@@ -21,9 +21,7 @@ class MembersController extends AbstractController
     #[Route('/', name: 'members')]
     public function indexAction(): Response
     {
-
         $members = $this->repository->all();
-
         return $this->render('members/index.html.twig', ['members' => $members]);
     }
 
@@ -50,5 +48,11 @@ class MembersController extends AbstractController
         }
 
         return $this->render('members/edit.html.twig', ['member' => $member, 'form' => $form]);
+    }
+
+    public function teamMemberList(int $max): Response
+    {
+        $members = $this->repository->all();
+        return $this->render('members/_teamMemberList.html.twig', ['members' => $members]);
     }
 }
