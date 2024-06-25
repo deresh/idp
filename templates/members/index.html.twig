@@ -1,15 +1,71 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Member list{% endblock %}
+{% block title %}Member listing{% endblock %}
+
+{% block sidelist %}
+    {{ dump(members) }}
+    {% for member in members %}
+        <div class="email-item email-item-selected pure-g">
+            <div class="pure-u">
+                <img width="64" height="64" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="/img/common/tilo-avatar.png">
+            </div>
+
+            <div class="pure-u-3-4">
+                <h5 class="email-name">{{ member.firstName }} {{ member.lastName }}</h5>
+                <h4 class="email-subject">Principal</h4>
+                <p class="email-desc">
+                    {{ member.email }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
 
 {% block body %}
-    <ul>
-        {% for member in members %}
-            <li>{{ member.id }} <a href="{{ url('member_details', {memberId: member.id}) }}"> {{ member.email }}  </a> {{ member.firstName }} {{ member.lastName }}
-                <a href="{{ url('member_edit', {memberId: member.id}) }}">Uredi</a>  </li>
-        {% endfor %}
-    </ul>
 
+    <div class="email-content">
+        <div class="email-content-header pure-g">
+            <div class="pure-u-1-2">
+                <h1 class="email-content-title">Hello from Toronto</h1>
+                <p class="email-content-subtitle">
+                    From <a>Tilo Mitra</a> at <span>3:56pm, April 3, 2021</span>
+                </p>
+            </div>
+
+            <div class="email-content-controls pure-u-1-2">
+                <button class="secondary-button pure-button">Reply</button>
+                <button class="secondary-button pure-button">Forward</button>
+                <button class="secondary-button pure-button">Move to</button>
+            </div>
+        </div>
+
+        <div class="email-content-body">
+
+        </div>
+    </div>
+
+    <table class="pure-table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Joined</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ member.id }}</td>
+            <td> <a href="{{ url('member_details', {memberId: member.id}) }}">   {{ member.firstName }} {{ member.lastName }}</a></td>
+            <td>{{ member.email }}</td>
+            <td>{{ member.email }}</td>
+            <td><a class="pure-button pure-button-primary" href="{{ url('member_edit', {memberId: member.id}) }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     <div {{ stimulus_controller('hello') }}>
         ...
     </div>

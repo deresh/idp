@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}IDP! {% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}IDP!{% endblock %}</title>
+
         {% block stylesheets %}
         {% endblock %}
 
@@ -13,8 +14,89 @@
     </head>
     <body>
 
+    <div id="layout" class="content pure-g">
+        <div id="nav" class="pure-u">
+            <a href="#" id="menuLink" class="nav-menu-button">Menu</a>
+
+            <div class="nav-inner">
+                <button class="primary-button pure-button">IDP tool</button>
+
+                <div class="pure-menu">
+                    <ul class="pure-menu-list">
+                        <li class="pure-menu-heading">Members:</li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">OKRs</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Calendar</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Retrospective</a></li>
+                        <li class="pure-menu-heading">Labels</li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-personal"></span>Seniorities</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-work"></span>Roles</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-travel"></span>Teams</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="list" class="pure-u-1">
+            {% block sidelist %}{% endblock %}
+        </div>
+        <div id="main" class="pure-u-1">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+    </div>
+    <!-- Script to make the Menu link work -->
+    <!-- Just stripped down version of the js/ui.js script for the side-menu layout -->
+    <script>
+        function getElements() {
+            return {
+                menu: document.getElementById('nav'),
+                menuLink: document.getElementById('menuLink')
+            };
+        }
+
+        function toggleClass(element, className) {
+            var classes = element.className.split(/\s+/);
+            var length = classes.length;
+            var i = 0;
+
+            for (; i < length; i++) {
+                if (classes[i] === className) {
+                    classes.splice(i, 1);
+                    break;
+                }
+            }
+            // The className is not found
+            if (length === classes.length) {
+                classes.push(className);
+            }
+
+            element.className = classes.join(' ');
+        }
+
+        function toggleMenu() {
+            var active = 'active';
+            var elements = getElements();
+
+            toggleClass(elements.menu, active);
+        }
+
+        function handleEvent(e) {
+            var elements = getElements();
+
+            if (e.target.id === elements.menuLink.id) {
+                toggleMenu();
+                e.preventDefault();
+            } else if (elements.menu.className.indexOf('active') !== -1) {
+                toggleMenu();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('click', handleEvent);
+        });
+    </script>
 
 
-        {% block body %}{% endblock %}
+
     </body>
 </html>
