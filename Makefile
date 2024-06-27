@@ -9,6 +9,7 @@ default: data
 build:
 	$(info Building project from scratch)
 	symfony composer install
+	symfony console importmap:install
 	symfony console doctrine:schema:drop --force
 	symfony console doctrine:schema:update --force
 	symfony console doctrine:fixtures:load --append
