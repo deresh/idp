@@ -9,6 +9,7 @@ runtime:
         - sodium
         - ctype
         - iconv
+        - pgsql
         
 
 #variables:
@@ -46,3 +47,4 @@ hooks:
         set -x -e
 
         symfony-deploy
+        
