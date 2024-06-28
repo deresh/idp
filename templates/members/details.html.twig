@@ -3,7 +3,31 @@
 {% block title %}Member details - {{ member.email }}{% endblock %}
 
 {% block body %}
-{{ member.email }}
-    {{ member.firstName }}
-    {{ member.lastName }}
+    <div class="row g-lg-2" style="outline: 1px dotted red">
+        <div class="col-lg-12">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Basic info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <div class="border border-top-0 p-lg-2">
+                {{ member.email }}
+                {{ member.firstName }}
+                {{ member.lastName }}
+            </div>
+
+        </div>
+
+
+    </div>
+
 {% endblock %}

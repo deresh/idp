@@ -4,29 +4,32 @@
 
 {% block body %}
 
-<div class="row row-cols-1 row-cols-lg-4 g-2">
+<div class="row row-cols-1 row-cols-lg-5 g-2">
     {% for member in members %}
-<div class="col">
-    <div class="card h-100">
-        <img src="{{ asset("/uploads/images/members/" ~ member.imgUrl) }}" class="card-img" alt="{{ member.firstName }} {{ member.lastName }}">
-        <div class="card-body">
-            <h5 class="card-title">{{ member.firstName }} {{ member.lastName }} : {{ member.seniority.name }}</h5>
-        <p class="card-text">
-            {% for role in member.roles %}
-            <span class="">{{ role.name }}</span>
-            {% endfor %}
-        </p>
-            <a href="#" class="btn btn-primary">Details</a>
-        </div>
-        <div class="card-footer">
-            <small class="text-body-secondary">Joined : {{ member.hiredAt|date('d.m.Y') }}</small>
+    <div class="col">
+        <div class="card h-100">
+            <h5 class="card-header">{{ member.firstName }} {{ member.lastName }}</h5>
+            <img src="{{ asset("/uploads/images/members/" ~ member.imgUrl) }}" class="card-img" alt="{{ member.firstName }} {{ member.lastName }}">
+            <div class="card-body">
+                <p class="card-title">
+                    Seniority: {{ member.seniority.name }}</p>
+                <p class="card-subtitle">Joined: {{ member.hiredAt|date('d.m.Y') }}</p>
+            </div>
+            <em>Roles</em>
+            <ul class="list-group list-group-flush">
+                {% for role in member.roles %}
+                    <li class="list-group-item list-group-item-warning">{{ role.name}}</li>
+                {% endfor %}
+            </ul>
+            <div class="card-footer text-center">
+                <a href="{{ url('member_details', {memberId : member.id }) }}" class="card-link btn btn-primary">Details</a>
+                <a href="#" class="card-link btn btn-secondary">Review</a>
+            </div>
         </div>
     </div>
-</div>
     {% endfor %}
 </div>
 
     <div {{ stimulus_controller('hello') }}>
-        ...weqeqw
     </div>
 {% endblock %}
