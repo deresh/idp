@@ -10,7 +10,11 @@ runtime:
         - ctype
         - iconv
         - pgsql
-        
+        - pdo_pgsql
+
+relationships:
+    database:
+
 
 #variables:
 #    php:
@@ -47,4 +51,6 @@ hooks:
         set -x -e
 
         symfony-deploy
+        symfony console doctrine:schema:up --force
+        symfony console doctrine:fixtures:load --append
         
