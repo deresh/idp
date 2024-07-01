@@ -5,7 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Domain\Member\Model\Role;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 use Domain\Tools\Priority;
 use Infrastructure\Doctrine\ToolEntity;
 
@@ -27,7 +27,7 @@ class ToolsFixtures extends Fixture
             $tool->setDescription($line[3]);
             $tool->setPriority(Priority::from((int)$line[1]));
             $tool->setRole(Role::tryFrom($line[4]));
-            $tool->setSeniority(Seniority::from($line[5]));
+            $tool->setSeniority(SeniorityLevel::from($line[5]));
 
             $manager->persist($tool);
 

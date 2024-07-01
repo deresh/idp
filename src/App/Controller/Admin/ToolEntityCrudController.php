@@ -3,7 +3,7 @@
 namespace App\Controller\Admin;
 
 use Domain\Member\Model\Role;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
@@ -54,7 +54,7 @@ class ToolEntityCrudController extends AbstractCrudController
         }
 
         $seniorities = [];
-        foreach (Seniority::cases() as $case) {
+        foreach (SeniorityLevel::cases() as $case) {
             $seniorities[$case->name] = $case->value;
         }
 

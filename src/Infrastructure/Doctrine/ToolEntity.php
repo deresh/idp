@@ -5,7 +5,7 @@ namespace Infrastructure\Doctrine;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Embedded;
 use Domain\Member\Model\Role;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 use Domain\Tools\Priority;
 
 #[ORM\Entity()]
@@ -27,8 +27,8 @@ class ToolEntity
 
     #[ORM\Column(type: 'string', enumType: Role::class)]
     private Role $role;
-    #[ORM\Column(type: 'string', enumType: Seniority::class)]
-    private Seniority $seniority;
+    #[ORM\Column(type: 'string', enumType: SeniorityLevel::class)]
+    private SeniorityLevel $seniority;
 
     public function getId(): ?int
     {
@@ -60,12 +60,12 @@ class ToolEntity
         $this->description = $description;
     }
 
-    public function getSeniority(): Seniority
+    public function getSeniority(): SeniorityLevel
     {
         return $this->seniority;
     }
 
-    public function setSeniority(Seniority $seniority): void
+    public function setSeniority(SeniorityLevel $seniority): void
     {
         $this->seniority = $seniority;
     }

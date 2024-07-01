@@ -18,37 +18,30 @@
                             <a class="nav-link" href="#">Skills</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-disabled="true">Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Assessments</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">1-on-1</a>
+                            <a class="nav-link " aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
                     <div class="border border-top-0 p-lg-2">
-                        <p>
-                            Seniority: {{ member.seniority.name }}
-                        </p>
-                        <p>Joined: {{ member.hiredAt|date('d.m.Y') }}</p>
-                        <em>Roles</em>
-                        <ul class="list-group list-group-flush">
-                            {% for role in member.roles %}
-                                <li class="list-group-item">{{ role.name}}</li>
-                            {% endfor %}
-                        </ul>
+                        <p class="card-title">
+                            Seniority: {{ member.seniority.name }}</p>
+                        <p class="card-subtitle">Joined: {{ member.hiredAt|date('d.m.Y') }}</p>
                     </div>
-
-                    <div class="pt-lg-2 text-center">
-                        <a href="#" class="card-link btn btn-primary">New review</a>
-                        <a href="#" class="card-link btn btn-secondary">New assessment</a>
+                    <em>Roles</em>
+                    <ul class="list-group list-group-flush">
+                        {% for role in member.roles %}
+                            <li class="list-group-item list-group-item-warning">{{ role.name}}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="card-footer text-center">
+                        <a href="{{ url('member_details', {memberId : member.id }) }}" class="card-link btn btn-primary">Details</a>
+                        <a href="#" class="card-link btn btn-secondary">Review</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card m-lg-2">
+                    <div class="card">
                         <h5 class="card-header">{{ member.firstName }} {{ member.lastName }}</h5>
                         <img src="{{ asset("/uploads/images/members/" ~ member.imgUrl) }}" class="card-img" alt="{{ member.firstName }} {{ member.lastName }}">
+
                     </div>
                 </div>
             </div>

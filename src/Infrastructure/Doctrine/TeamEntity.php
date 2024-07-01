@@ -4,7 +4,7 @@ namespace Infrastructure\Doctrine;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Embedded;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 #[ORM\Entity()]
 class TeamEntity
 {

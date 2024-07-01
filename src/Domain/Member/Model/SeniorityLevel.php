@@ -2,7 +2,7 @@
 
 namespace Domain\Member\Model;
 
-enum Seniority: string
+enum SeniorityLevel: string
 {
     case Any = 'any';
     case Intern = 'intern';

@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 
 #[ORM\Entity(repositoryClass: MemberEntityRepository::class)]
 class MemberEntity
@@ -31,8 +31,8 @@ class MemberEntity
 
 
 
-    #[ORM\Column(type: 'string', enumType: Seniority::class)]
-    private Seniority $seniority;
+    #[ORM\Column(type: 'string', enumType: SeniorityLevel::class)]
+    private SeniorityLevel $seniority;
 
     #[ORM\Column(type: 'string', nullable: true)]
     private ?string $image = null;
@@ -67,12 +67,12 @@ class MemberEntity
         $this->hireDate = $hireDate;
     }
 
-    public function getSeniority(): Seniority
+    public function getSeniority(): SeniorityLevel
     {
         return $this->seniority;
     }
 
-    public function setSeniority(Seniority $seniority): void
+    public function setSeniority(SeniorityLevel $seniority): void
     {
         $this->seniority = $seniority;
     }

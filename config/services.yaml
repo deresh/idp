@@ -33,5 +33,10 @@ services:
 
     Infrastructure\Doctrine\MemberEntityRepository:
 
+    Infrastructure\Doctrine\SeniorityEntityRepository:
+
     Domain\Member\Model\MembersRepository:
         alias: Infrastructure\Doctrine\MemberEntityRepository
+
+    Domain\Seniority\SeniorityRepository:
+        alias: Infrastructure\Doctrine\SeniorityEntityRepository

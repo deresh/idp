@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 use Domain\Tools\ProgressStatus;
 
 #[ORM\Entity()]
@@ -25,11 +25,11 @@ class MemberAssesmentEntity
     #[ORM\Column(type: 'datetime_immutable')]
     private DateTimeImmutable $dateTime;
 
-    #[ORM\Column(type: 'string', enumType: Seniority::class)]
-    private Seniority $selfAssessedSeniority;
+    #[ORM\Column(type: 'string', enumType: SeniorityLevel::class)]
+    private SeniorityLevel $selfAssessedSeniority;
 
-    #[ORM\Column(type: 'string', enumType: Seniority::class)]
-    private Seniority $agreedSeniority;
+    #[ORM\Column(type: 'string', enumType: SeniorityLevel::class)]
+    private SeniorityLevel $agreedSeniority;
 
     #[ORM\Column(type: 'string', nullable: true, enumType: ProgressStatus::class)]
     private ProgressStatus $progressStatus = ProgressStatus::OnBoarding;
@@ -106,22 +106,22 @@ class MemberAssesmentEntity
         $this->weaknesses = $weaknesses;
     }
 
-    public function getSelfAssessedSeniority(): Seniority
+    public function getSelfAssessedSeniority(): SeniorityLevel
     {
         return $this->selfAssessedSeniority;
     }
 
-    public function setSelfAssessedSeniority(Seniority $selfAssessedSeniority): void
+    public function setSelfAssessedSeniority(SeniorityLevel $selfAssessedSeniority): void
     {
         $this->selfAssessedSeniority = $selfAssessedSeniority;
     }
 
-    public function getAgreedSeniority(): Seniority
+    public function getAgreedSeniority(): SeniorityLevel
     {
         return $this->agreedSeniority;
     }
 
-    public function setAgreedSeniority(Seniority $agreedSeniority): void
+    public function setAgreedSeniority(SeniorityLevel $agreedSeniority): void
     {
         $this->agreedSeniority = $agreedSeniority;
     }

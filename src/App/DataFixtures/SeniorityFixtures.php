@@ -5,7 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Domain\Member\Model\Role;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 use Infrastructure\Doctrine\RoleEntity;
 use Infrastructure\Doctrine\SeniorityEntity;
 use Infrastructure\Doctrine\TeamEntity;
@@ -24,7 +24,7 @@ class SeniorityFixtures extends Fixture
 
             $roleEntity = new SeniorityEntity();
 
-            $roleEntity->setSeniority(Seniority::from($line['0']));
+            $roleEntity->setSeniority(SeniorityLevel::from($line['0']));
             $roleEntity->setDescription($line[1]);
             $manager->persist($roleEntity);
 

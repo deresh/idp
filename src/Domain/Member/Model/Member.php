@@ -13,7 +13,7 @@ class Member
 
     public string $lastName;
 
-    public Seniority $seniority;
+    public SeniorityLevel $seniority;
 
     /**
      * @var array|Role[]
@@ -26,7 +26,7 @@ class Member
 
     public string $imgUrl;
 
-    public function __construct(int $id, string $email, string $firstName, string $lastName, Seniority $seniority, array $roles, string $team, string $imgUrl, \DateTime $hiredAt)
+    public function __construct(int $id, string $email, string $firstName, string $lastName, SeniorityLevel $seniority, array $roles, string $team, string $imgUrl, \DateTime $hiredAt)
     {
         $this->id = $id;
         $this->email = $email;

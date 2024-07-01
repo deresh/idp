@@ -6,7 +6,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 use Infrastructure\Doctrine\MemberEntity;
 
 class MemberFixtures extends Fixture implements DependentFixtureInterface
@@ -29,7 +29,7 @@ class MemberFixtures extends Fixture implements DependentFixtureInterface
             $memberEntity->setFirstName($line[1]);
             $memberEntity->setLastName($line[2]);
             $memberEntity->setRoles(new ArrayCollection([$this->getReference('role-'.$line[3])]));
-            $memberEntity->setSeniority(Seniority::from($line[4]));
+            $memberEntity->setSeniority(SeniorityLevel::from($line[4]));
             $memberEntity->setHireDate(new \DateTime($line[9]));
             $memberEntity->setTeam($this->getReference('team-'.$line[5]));
             $memberEntity->setImage($line[12]);

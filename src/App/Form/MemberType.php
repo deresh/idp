@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use Domain\Member\Model\Role;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\EnumType;
@@ -17,7 +17,7 @@ class MemberType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('seniority', EnumType::class, ['class' => Seniority::class, 'label' => 'Seniority'])
+            ->add('seniority', EnumType::class, ['class' => SeniorityLevel::class, 'label' => 'Seniority'])
             ->add('role', EnumType::class, ['class' => Role::class, 'label' => 'Role'])
             ->add('email', EmailType::class, ['label' => 'Email'])
             ->add('firstName', TextType::class, ['label' => 'First Name'])

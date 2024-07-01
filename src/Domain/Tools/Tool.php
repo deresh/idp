@@ -2,13 +2,13 @@
 
 namespace Domain\Tools;
 
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
 
 class Tool
 {
     public string $name;
 
     public string $description;
-    public Seniority $seniority;
+    public SeniorityLevel $seniority;
 
 }

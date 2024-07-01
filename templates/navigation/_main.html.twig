@@ -1,0 +1,11 @@
+<ul class="nav nav-pills flex-column mb-auto">
+    {% for item in nav %}
+        <li class="nav-item">
+            <a href="{{ url(item.route) }}" class="nav-link text-white {% if item.active %}active{% endif %}" aria-current="page">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                {{ item.name }}
+            </a>
+        </li>
+    {% endfor %}
+
+</ul>

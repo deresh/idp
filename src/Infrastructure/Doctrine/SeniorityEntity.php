@@ -3,9 +3,10 @@
 namespace Infrastructure\Doctrine;
 
 use Doctrine\ORM\Mapping as ORM;
-use Domain\Member\Model\Seniority;
+use Domain\Member\Model\SeniorityLevel;
+use Domain\Seniority\SeniorityRepository;
 
-#[ORM\Entity()]
+#[ORM\Entity(repositoryClass: SeniorityEntityRepository::class)]
 class SeniorityEntity
 {
     #[ORM\Id]
@@ -14,7 +15,7 @@ class SeniorityEntity
     private ?int $id = null;
 
     #[ORM\Column]
-    private Seniority $seniority;
+    private SeniorityLevel $seniority;
 
     #[ORM\Column(type: 'string', length: 1500)]
     private ?string $description = null;
@@ -29,12 +30,12 @@ class SeniorityEntity
         $this->id = $id;
     }
 
-    public function getSeniority(): Seniority
+    public function getSeniority(): SeniorityLevel
     {
         return $this->seniority;
     }
 
-    public function setSeniority(Seniority $seniority): void
+    public function setSeniority(SeniorityLevel $seniority): void
     {
         $this->seniority = $seniority;
     }
