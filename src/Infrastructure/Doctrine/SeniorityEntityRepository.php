@@ -4,6 +4,7 @@ namespace Infrastructure\Doctrine;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Domain\Seniority\Seniority;
 use Domain\Seniority\SeniorityRepository;
 
 class SeniorityEntityRepository extends ServiceEntityRepository implements SeniorityRepository
@@ -15,7 +16,11 @@ class SeniorityEntityRepository extends ServiceEntityRepository implements Senio
 
     function all(): array
     {
-        return $this->findAll();
+        $seniorities = [];
+        foreach ($this->findAll() as $seniorityEntity) {
+            $seniorities[$seniorityEntity->getId()] = Seniority::fromEntity($seniorityEntity);
+        }
+        return $seniorities;
     }
 
     public function byId(int $seniorityId)
