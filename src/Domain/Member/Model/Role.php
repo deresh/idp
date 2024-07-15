@@ -14,4 +14,13 @@ enum Role: string
 
     case Any = 'any';
 
+    public static function labels(): array
+    {
+        $labels = [];
+        foreach (self::cases() as $value) {
+            $labels[$value->value] = $value->name;
+        }
+        return $labels;
+    }
+
 }

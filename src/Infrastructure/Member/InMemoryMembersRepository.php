@@ -13,7 +13,7 @@ class InMemoryMembersRepository  implements MembersRepository
     /**
      * @return array|Member[]
      */
-    public function all(): array{
+    public function all(array $filters = []): array{
 
         return [
             new Member(

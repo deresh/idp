@@ -17,4 +17,13 @@ enum SeniorityLevel: string
     case Senior2 = 'senior 2';
     case Principal = 'principal';
 
+    public static function labels(): array
+    {
+        $labels = [];
+        foreach (self::cases() as $value) {
+            $labels[$value->value] = $value->name;
+        }
+        return $labels;
+    }
+
 }

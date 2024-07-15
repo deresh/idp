@@ -3,25 +3,31 @@
 {% block title %}Member listing{% endblock %}
 
 {% block body %}
-<div class="row g-3 m-lg-2 p-lg-2">
-    <div class="col-lg-4">
-        <label for="inputState" class="form-label">Role</label>
-        <select id="inputState" class="form-select">
-            <option selected>Choose...</option>
-            <option>...</option>
-        </select>
-    </div>
-    <div class="col-lg-4">
-        <label for="inputState" class="form-label">Seniority</label>
-        <select id="inputState" class="form-select">
-            <option selected>Choose...</option>
-            <option>...</option>
-        </select>
-    </div>
-    <div class="col-lg-4">
-        <button class="btn btn-primary">Filter</button>
-    </div>
-</div>
+    <form action="">
+        <div class="row g-3 m-lg-2 p-lg-2">
+        <div class="col-lg-4">
+            <label for="inputState" class="form-label">Role</label>
+            <select id="inputState" class="form-select" name="role">
+                {% for key,role in filterData.role %}
+                    <option value="{{ key }}">{{ role }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-lg-4">
+            <label for="inputState" class="form-label">Seniority</label>
+            <select id="inputState" class="form-select" name="seniority">
+                {% for key,seniority in filterData.seniority %}
+                    <option value="{{ key }}">{{ seniority }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-lg-4">
+            <label for="">&nbsp;</label>
+            <button class="btn btn-primary">Filter</button>
+        </div>
+        </div>
+    </form>
+
 <div class="row row-cols-1 row-cols-lg-5 g-2">
     {% for member in members %}
     <div class="col">

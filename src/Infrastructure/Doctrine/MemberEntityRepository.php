@@ -17,9 +17,15 @@ class MemberEntityRepository extends ServiceEntityRepository implements MembersR
         parent::__construct($registry, MemberEntity::class);
     }
 
-    public function all(): array
+    public function all(array $filters =  []): array
     {
-        $all = $this->createQueryBuilder('m')->orderBy('m.hireDate')->getQuery()->getResult();
+        $builder = $this->createQueryBuilder('m')
+            ->select('m, re')
+            ->join(RoleEntity::class, 're', 'WITH', 'm.role = re.id');
+
+        $this->addFilters($filters, $builder);
+
+        $all = $builder->getQuery()->getResult();
         $members = [];
 
         foreach ($all as $member) {
@@ -49,5 +55,19 @@ class MemberEntityRepository extends ServiceEntityRepository implements MembersR
         $memberEntity->setSeniority($member->seniority);
 
         $this->getEntityManager()->persist($memberEntity);
+    }
+
+    /**
+     * @param array $filters
+     * @param \Doctrine\ORM\QueryBuilder $builder
+     * @return void
+     */
+    private function addFilters(array $filters, \Doctrine\ORM\QueryBuilder $builder): void
+    {
+        foreach ($filters as $field => $value) {
+            if ($field === 'role') {
+                $builder->andWhere('re.role = :role')->setParameter('role', $value);
+            }
+        }
     }
 }

@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Form\MemberType;
 use Domain\Member\Model\MembersRepository;
+use Domain\Member\Model\Role;
+use Domain\Member\Model\SeniorityLevel;
+use Domain\Seniority\Seniority;
 use Infrastructure\Member\InMemoryMembersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,10 +22,17 @@ class MembersController extends AbstractController
         $this->repository = $repository;
     }
     #[Route('/', name: 'members')]
-    public function indexAction(): Response
+    public function indexAction(Request $request): Response
     {
-        $members = $this->repository->all();
-        return $this->render('members/index.html.twig', ['members' => $members]);
+        $filters = $request->query->all();
+        $members = $this->repository->all($filters);
+
+        $filterData = [
+            'role' => Role::labels(),
+            'seniority' => SeniorityLevel::labels(),
+        ];
+
+        return $this->render('members/index.html.twig', ['members' => $members, 'filterData' => $filterData]);
     }
 
     #[Route('/details/{memberId}','member_details')]
