@@ -20,8 +20,8 @@ class MemberEntityRepository extends ServiceEntityRepository implements MembersR
     public function all(array $filters =  []): array
     {
         $builder = $this->createQueryBuilder('m')
-            ->select('m, re')
-            ->join(RoleEntity::class, 're', 'WITH', 'm.role = re.id');
+            ->select('m, r')
+            ->join('m.roles', 'r');
 
         $this->addFilters($filters, $builder);
 
@@ -65,8 +65,12 @@ class MemberEntityRepository extends ServiceEntityRepository implements MembersR
     private function addFilters(array $filters, \Doctrine\ORM\QueryBuilder $builder): void
     {
         foreach ($filters as $field => $value) {
-            if ($field === 'role') {
-                $builder->andWhere('re.role = :role')->setParameter('role', $value);
+            if ($field === 'role' && !in_array($value, ['', 'any'])) {
+                $builder->andWhere('r.role = :role')->setParameter('role', $value);
+            }
+
+            if ($field === 'seniority' && !in_array($value, ['', 'any'])) {
+                $builder->andWhere('m.seniority = :seniority')->setParameter('seniority', $value);
             }
         }
     }

@@ -8,16 +8,18 @@
         <div class="col-lg-4">
             <label for="inputState" class="form-label">Role</label>
             <select id="inputState" class="form-select" name="role">
+                <option value="">Select role</option>
                 {% for key,role in filterData.role %}
-                    <option value="{{ key }}">{{ role }}</option>
+                    <option {% if app.request.get('role') == key %}selected {% endif %} value="{{ key }}">{{ role }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="col-lg-4">
             <label for="inputState" class="form-label">Seniority</label>
             <select id="inputState" class="form-select" name="seniority">
+                <option value="">Select seniority</option>
                 {% for key,seniority in filterData.seniority %}
-                    <option value="{{ key }}">{{ seniority }}</option>
+                    <option  {% if app.request.get('seniority') == key %}selected {% endif %} value="{{ key }}">{{ seniority }}</option>
                 {% endfor %}
             </select>
         </div>
