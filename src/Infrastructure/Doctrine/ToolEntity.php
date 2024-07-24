@@ -8,7 +8,7 @@ use Domain\Member\Model\Role;
 use Domain\Member\Model\SeniorityLevel;
 use Domain\Tools\Priority;
 
-#[ORM\Entity()]
+#[ORM\Entity(repositoryClass: ToolEntityRepository::class)]
 class ToolEntity
 {
     #[ORM\Id]

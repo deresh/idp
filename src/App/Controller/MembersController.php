@@ -42,6 +42,13 @@ class MembersController extends AbstractController
         return $this->render('members/details.html.twig', ['member' => $member]);
     }
 
+    #[Route('/details/{memberId}/tools','member_details_tools')]
+    public function toolsAction(int $memberId): Response
+    {
+        $member = $this->repository->byId($memberId);
+        return $this->render('members/details.html.twig', ['member' => $member]);
+    }
+
     #[Route('/details/edit/{memberId}','member_edit', methods: ['POST', 'GET'])]
     public function detailsEditAction(int $memberId, Request $request): Response
     {
