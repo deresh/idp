@@ -15,7 +15,7 @@ class ToolEntityRepository extends ServiceEntityRepository implements ToolReposi
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, MemberToolEntity::class);
+        parent::__construct($registry, ToolEntity::class);
     }
 
     public function all(array $filters = []): array
@@ -31,22 +31,5 @@ class ToolEntityRepository extends ServiceEntityRepository implements ToolReposi
 
         return $tools;
     }
-
-    public function byMember(Member $member)
-    {
-         $builder = $this->createQueryBuilder('t')
-             ->join('t.tools', 'te')
-             ->where('t.member = :member', ['member' => $member->id]);
-
-        $memberTools = [];
-        foreach ($builder->getQuery()->getResult() as $memberTool) {
-            $memberTools[] = Tool::fromEntity(
-                $memberTool->getTool()
-            );
-        }
-
-        return $memberTools;
-    }
-
 
 }

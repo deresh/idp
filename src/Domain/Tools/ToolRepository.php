@@ -5,5 +5,5 @@ namespace Domain\Tools;
 
  interface ToolRepository
 {
-    public function byMember(Member $member);
+    public function all(array $filters);
 }
