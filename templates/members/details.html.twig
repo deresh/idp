@@ -9,13 +9,13 @@
                 <div class="col-lg-8">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" aria-current="page" href="#" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Basic info</a>
+                            <a class="nav-link active" aria-current="page" href="#" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" >Basic info</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#tools" type="button" role="tab" aria-controls="tools">Tools</a>
+                            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#tools" type="button" role="tab" aria-controls="tools" aria-selected="true">Tools</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" href="#">Skills</a>
+                            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab" aria-controls="skills">Skills</a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" aria-disabled="true">Reviews</a>
@@ -48,7 +48,25 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tools" role="tabpanel" aria-labelledby="tools-tab">
-                            <h1>bre rge</h1>
+                            <dl>
+                                {% for tool in member.tools %}
+                                <dt>{{ tool.tool.name }}</dt>
+                                <dd>
+                                    {{ tool.tool.description|raw }}
+
+                                    {{ tool.tool.seniority.name }}
+
+                                    {{ tool.priority.name }} / {{ tool.status.name }}
+
+                                </dd>
+                                {% endfor %}
+                            </dl>
+
+
+
+                        </div>
+                        <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+                            <h1>skilz</h1>
                         </div>
                     </div>
 

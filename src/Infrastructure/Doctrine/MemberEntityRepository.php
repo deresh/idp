@@ -22,7 +22,7 @@ class MemberEntityRepository extends ServiceEntityRepository implements MembersR
         $builder = $this->createQueryBuilder('m')
             ->select('m, r')
             ->join('m.roles', 'r')
-            ->join('m.tools', 't')
+            ->leftJoin('m.tools', 't')
         ;
 
         $this->addFilters($filters, $builder);
