@@ -14,4 +14,6 @@ interface MembersRepository
     public function persist(Member $member): void;
 
     public function nextId();
+
+    public function byEmail(string $email);
 }

@@ -6,6 +6,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Domain\Member\Model\Member;
 use Domain\Member\Model\MembersRepository;
+use Symfony\Component\Uid\Uuid;
 
 /**
  * @extends ServiceEntityRepository<MemberEntity>
@@ -44,6 +45,11 @@ class MemberEntityRepository extends ServiceEntityRepository implements MembersR
         return Member::fromEntity($entity);
     }
 
+    public function byEmail(string $email): ?Member
+    {
+        return $this->findOneBy(['email' => $email]);
+    }
+
     public function persist(Member $member): void
     {
         $memberEntity = $this->find($member->id);
@@ -75,5 +81,10 @@ class MemberEntityRepository extends ServiceEntityRepository implements MembersR
                 $builder->andWhere('m.seniority = :seniority')->setParameter('seniority', $value);
             }
         }
+    }
+
+    public function nextId(): string
+    {
+        return UUID::v4()->toString();
     }
 }

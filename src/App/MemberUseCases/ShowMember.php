@@ -5,7 +5,7 @@ namespace App\MemberUseCases;
 use Domain\Member\Model\Member;
 use Domain\Member\Model\MembersRepository;
 
-class CreateMember
+class ShowMember
 {
     public MembersRepository $membersRepository;
 
@@ -18,13 +18,9 @@ class CreateMember
     }
 
 
-    public function __invoke(NewMemberDto $newMember): void
+    public function __invoke(string $email): MemberDto
     {
 
-        $memberId = $this->membersRepository->nextId();
-        $member = Member::fromNewMember($newMember, $memberId);
-
-        $this->membersRepository->persist($member);
-
+        return $this->membersRepository->byEmail($email);
     }
 }

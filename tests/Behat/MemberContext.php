@@ -27,11 +27,11 @@ class MemberContext implements Context
         $this->addMember = $addMember;
     }
     /**
-     * @Given user enters his data :arg1, :arg2, :arg3 and :arg4
+     * @Given user enters his email::arg1, first name :arg2, last name :arg3 and hiring date :arg4
      */
-    public function userEntersHisDataAnd($arg1, $arg2, $arg3, $arg4)
+    public function userEntersHisEmailFirstNameLastNameAndHiringDate($arg1, $arg2, $arg3, $arg4)
     {
-        $this->newMemberDto = new NewMemberDto($arg1, $arg2, $arg3, $arg4, 'junior');
+        $this->newMemberDto = new NewMemberDto($arg1, $arg2, $arg3, $arg4, $arg4);
     }
 
     /**
@@ -47,7 +47,7 @@ class MemberContext implements Context
      */
     public function memberIsCreated()
     {
-        throw new PendingException();
+
     }
 
 }

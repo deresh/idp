@@ -49,6 +49,19 @@ class InMemoryMembersRepository  implements MembersRepository
         return null;
     }
 
+    public function byEmail(string $email): ?Member
+    {
+        $all = $this->all();
+
+        foreach ($all as $member) {
+            if ($member->email === $email) {
+                return $member;
+            }
+        }
+
+        return null;
+    }
+
     public function persist(Member $member): void
     {
 
