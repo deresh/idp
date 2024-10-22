@@ -27,7 +27,7 @@
                 </a>
                 <hr>
                 {{ render(controller(
-                    'App\\Controller\\NavigationController::main', {active: app.request.get('_route')}
+                    'Web\\Controller\\NavigationController::main', {active: app.request.get('_route')}
                 )) }}
             </div>
             <div class="col-lg-10">
