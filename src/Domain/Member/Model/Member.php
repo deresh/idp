@@ -2,6 +2,7 @@
 
 namespace Domain\Member\Model;
 
+use App\MemberUseCases\NewMemberDto;
 use Domain\Tools\MemberTool;
 use Infrastructure\Doctrine\MemberEntity;
 
@@ -56,5 +57,21 @@ class Member
         }
 
         return new self($entity->getId(), $entity->getEmail(),$entity->getFirstName(), $entity->getLastName(), $entity->getSeniority(), $roles, $entity->getTeam()->getName(), (string) $entity->getImage(), $entity->getHireDate(), $tools);
+    }
+
+    public static function fromNewMember(NewMemberDto $newMember, string $id)
+    {
+        return new self(
+            id: $id,
+            email: $newMember->email,
+            firstName: $newMember->firstName,
+            lastName: $newMember->lastName,
+            seniority: SeniorityLevel::Any,
+            roles: [Role::Any],
+            team: null,
+            imgUrl: '',
+            hiredAt: new \DateTime($newMember->hiredAt),
+            tools: []
+        );
     }
 }

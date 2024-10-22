@@ -12,4 +12,6 @@ interface MembersRepository
     public function byId(int $memberId): ?Member;
 
     public function persist(Member $member): void;
+
+    public function nextId();
 }

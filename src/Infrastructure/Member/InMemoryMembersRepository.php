@@ -7,6 +7,7 @@ use Domain\Member\Model\MembersRepository;
 use Domain\Member\Model\Role;
 use Domain\Member\Model\SeniorityLevel;
 use RuntimeException;
+use Symfony\Component\Uid\Uuid;
 
 class InMemoryMembersRepository  implements MembersRepository
 {
@@ -53,5 +54,8 @@ class InMemoryMembersRepository  implements MembersRepository
 
     }
 
-
+    public function nextId(): string
+    {
+        return UUID::v4()->toString();
+    }
 }

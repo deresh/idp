@@ -20,6 +20,9 @@ services:
             - '../src/Web/Entity/'
             - '../src/Web/Kernel.php'
 
+    App\:
+        resource: '../src/App'
+
     Domain\:
         resource: '../src/Domain'
 
