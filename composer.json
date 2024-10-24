@@ -66,11 +66,12 @@
 		}
 	},
 	"require-dev" : {
-		"behat/behat" : "^3.14",
-		"friends-of-behat/symfony-extension" : "^2.6",
-		"symfony/debug-bundle" : "7.1.*",
-		"symfony/maker-bundle" : "^1.60",
-		"symfony/stopwatch" : "7.1.*",
-		"symfony/web-profiler-bundle" : "7.1.*"
+		"behat/behat": "^3.14",
+		"friends-of-behat/symfony-extension": "^2.6",
+		"matthiasnoback/behat-expect-exception": "^0.3.0",
+		"symfony/debug-bundle": "7.1.*",
+		"symfony/maker-bundle": "^1.60",
+		"symfony/stopwatch": "7.1.*",
+		"symfony/web-profiler-bundle": "7.1.*"
 	}
 }

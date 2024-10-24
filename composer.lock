@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3731525d90b6214438696d1b618c43b6",
+    "content-hash": "87f58fe58e3af8c750c09de1950c1952",
     "packages": [
         {
             "name": "composer/semver",
@@ -7200,6 +7200,40 @@
                 "source": "https://github.com/FriendsOfBehat/SymfonyExtension/tree/v2.6.0"
             },
             "time": "2024-07-03T15:49:43+00:00"
+        },
+        {
+            "name": "matthiasnoback/behat-expect-exception",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasnoback/behat-expect-exception.git",
+                "reference": "9dfa73d7107b0391f55b0f0ac2047a97c0430f62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasnoback/behat-expect-exception/zipball/9dfa73d7107b0391f55b0f0ac2047a97c0430f62",
+                "reference": "9dfa73d7107b0391f55b0f0ac2047a97c0430f62",
+                "shasum": ""
+            },
+            "require-dev": {
+                "behat/behat": "^3.5",
+                "php": "^7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "issues": "https://github.com/matthiasnoback/behat-expect-exception/issues",
+                "source": "https://github.com/matthiasnoback/behat-expect-exception/tree/master"
+            },
+            "time": "2020-01-23T17:27:41+00:00"
         },
         {
             "name": "nikic/php-parser",

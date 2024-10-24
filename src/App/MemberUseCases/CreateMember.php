@@ -20,6 +20,11 @@ class CreateMember
 
     public function __invoke(NewMemberDto $newMember): void
     {
+        $existingUser = $this->membersRepository->byEmail($newMember->email);
+
+        if ($existingUser) {
+            throw new DuplicateEmailException('User already exists.');
+        }
 
         $memberId = $this->membersRepository->nextId();
         $member = Member::fromNewMember($newMember, $memberId);

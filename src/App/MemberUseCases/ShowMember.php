@@ -18,9 +18,8 @@ class ShowMember
     }
 
 
-    public function __invoke(string $email): MemberDto
+    public function __invoke(string $email): ?Member
     {
-
         return $this->membersRepository->byEmail($email);
     }
 }

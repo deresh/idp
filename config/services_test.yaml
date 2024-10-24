@@ -5,3 +5,6 @@ services:
 
     Tests\Behat\:
         resource: '../tests/Behat/*'
+
+    Domain\Member\Model\MembersRepository:
+        alias: Tests\Behat\InMemoryMembersRepository
