@@ -5,7 +5,7 @@ namespace App\MemberUseCases;
 use Domain\Member\Model\Member;
 use Domain\Member\Model\MembersRepository;
 
-class ShowMember
+class FetchMember
 {
     public MembersRepository $membersRepository;
 
